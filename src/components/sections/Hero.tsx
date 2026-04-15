@@ -16,6 +16,17 @@ export default function Hero() {
 
   const [images, setImages] = useState<HTMLImageElement[]>([]);
   const [loaded, setLoaded] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Hydration and Mobile Detection
+  useEffect(() => {
+    setIsMounted(true);
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -26,6 +37,8 @@ export default function Hero() {
 
   // 1. Preload Images
   useEffect(() => {
+    if (!isMounted || isMobile) return;
+
     let loadedCount = 0;
     const loadedImages: HTMLImageElement[] = [];
 
@@ -129,8 +142,71 @@ export default function Hero() {
   const isLoading = loaded < FRAME_COUNT;
   const progressPercent = Math.round((loaded / FRAME_COUNT) * 100);
 
+  // Render Mobile Fallback instantly to avoid loading 146 frames
+  if (isMounted && isMobile) {
+    return (
+      <section id="hero-mobile" className="relative w-full h-[100svh] bg-black overflow-hidden flex items-center">
+        {/* Static Frame Background instead of heavy sequence */}
+        <div className="absolute inset-0 w-full h-full">
+          <Image 
+            src="/sequence/ezgif-frame-110.jpg" 
+            alt="Stefanie Lommel"
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Overlays for text legibility */}
+          <div className="absolute inset-0 bg-[#1A1A18] mix-blend-multiply opacity-75" />
+          <div className="absolute inset-0 bg-black/40 opacity-75" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50 opacity-90" />
+        </div>
+
+        {/* Content Overlay */}
+        <div className="relative z-10 container mx-auto px-[5%]">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.5, delay: 0.2, ease: [0.32, 0.72, 0, 1] }}
+            className="max-w-2xl text-left"
+          >
+            {/* Eyebrow Tag */}
+            <div className="w-max rounded-full px-4 py-1.5 mb-6 text-[9px] uppercase tracking-[0.25em] font-semibold border border-white/20 text-white/90 backdrop-blur-md">
+              Dringlichkeits-Dialog
+            </div>
+            
+            <h1 className="font-serif text-4xl leading-[1.1] text-white mb-6 text-balance tracking-tight">
+              Klarheit auf Entscheidungsebene,<br />
+              <span className="italic text-[#C27347] font-light">wenn viel auf dem Spiel steht.</span>
+            </h1>
+            
+            {/* Refined Text */}
+            <p className="font-sans text-[13px] text-white/80 leading-relaxed mb-10 font-light pr-4">
+              Ein exklusives Sparring für Inhaber und Geschäftsführer in Traditionshäusern. Wenn spürbar wird, dass sich etwas ändern muss – aber niemand weiß, wie, ohne Werte und Vertrauen zu verlieren.
+            </p>
+            
+            {/* CTA Button */}
+            <Link
+              href="https://zeeg.me/info8723/15"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group w-full rounded-full bg-[#C27347] pl-8 pr-2 py-2 flex items-center justify-between gap-6 text-[11px] font-sans font-semibold uppercase tracking-[0.2em] text-white transition-all hover:bg-[#A85E3A] shadow-lg"
+            >
+              <span>Akut: 15 Min. Telefonat</span>
+              <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+                <ArrowUpRight className="w-4 h-4 text-white" strokeWidth={1.5} />
+              </div>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+    );
+  }
+
+  // Prevents hydration mismatch by not rendering sequence wrapper until mounted
+  if (!isMounted) return <section className="w-full h-screen bg-black" />;
+
   return (
-    <section ref={containerRef} id="hero" className="relative w-full h-[400vh] bg-black">
+    <section ref={containerRef} id="hero-desktop" className="relative w-full h-[400vh] bg-black">
       
       {/* Loading Overlay */}
       <div 
