@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+  --font-script: var(--font-script);
+  
+  /* Five Pathways / Heritage Editorial Colors */
+  --color-canvas: #FAF8F4; /* Creme / Ivory */
+  --color-surface: #FFFFFF; /* Pure White */
+  --color-slate: #1A1A18; /* Deep Anthracite */
+  --color-mint: #A58861; /* Refined Gold/Brass */
+  --color-coral: #8C7355; /* Deep Bronze */
+  
+  /* Legacy mappings (to not break sections yet) */
+  --color-onyx: #1A1A18; 
+  --color-pearl: #FFFFFF;
+  --color-beige: #FAF8F4;
+  --color-accent: #A58861;
+  --color-earth: #8C7355;
+}
+
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-slate);
+}
+
+
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
