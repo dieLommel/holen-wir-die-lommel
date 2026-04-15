@@ -22,7 +22,7 @@ const STICKY_CARDS = [
     label: "Der Akute Konflikt",
     title: "Eigentlich wissen wir es längst.",
     desc: "Du willst das Unternehmen in die Zukunft führen, ohne zu zerstören, was es ausmacht. Jede Alternative scheint einen fundamentalen Wert aufzugeben. Diese Zerrissenheit kostet jeden Tag Geld und Kraft.",
-    img: "/images/ich im Gespräch.jpg",
+    img: "/images/ich_im_gespraech.jpg",
     imgClass: "object-cover object-[80%_center] md:object-right scale-[1.3] saturate-[0.9] contrast-[1.05] sepia-[0.1] hover:saturate-100 hover:sepia-0 transition-all duration-1000",
     rotate: "lg:rotate-[1.5deg]",
     imageLeft: false

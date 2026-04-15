@@ -83,7 +83,7 @@ export default function CTA() {
                   <div className="relative w-24 h-24 rounded-full overflow-hidden shrink-0 border-2 border-[#C27347]/20 p-1">
                     <div className="relative w-full h-full rounded-full overflow-hidden">
                       <Image 
-                        src="/images/ich schwarz rote Kette.jpg" 
+                        src="/images/stefanie_rote_kette.jpg" 
                         alt="Stefanie Lommel" 
                         fill 
                         className="object-cover object-[center_30%] saturate-100 contrast-[1.05]"
