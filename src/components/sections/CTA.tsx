@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowUpRight, ClockAlert, PhoneCall } from "lucide-react";
 
-const VANGUARD_EASE = [0.32, 0.72, 0, 1];
+const VANGUARD_EASE = [0.32, 0.72, 0, 1] as const;
 
 export default function CTA() {
   return (

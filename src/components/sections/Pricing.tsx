@@ -4,7 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
-const VANGUARD_EASE = [0.32, 0.72, 0, 1];
+const VANGUARD_EASE = [0.32, 0.72, 0, 1] as const;
 
 const containerVariants = {
   hidden: { opacity: 0 },
