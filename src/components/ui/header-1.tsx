@@ -101,31 +101,24 @@ export function Header() {
 					<MenuToggleIcon open={open} className="size-5" duration={300} />
 				</Button>
 			</nav>
-			<MobileMenu open={open} className="flex flex-col justify-between gap-2">
-				<div className="grid gap-y-2">
+			<MobileMenu open={open} className="flex flex-col justify-between">
+				<div className="flex flex-col gap-y-2 pt-8">
 					{links.map((link) => (
 						<a
 							key={link.label}
-							className={buttonVariants({
-								variant: 'ghost',
-								className: 'justify-start',
-							})}
+							className="font-serif text-4xl text-slate hover:text-[#C27347] transition-colors py-5 border-b border-slate/10"
 							href={link.href}
+							onClick={() => setOpen(false)}
 						>
 							{link.label}
 						</a>
 					))}
 				</div>
-				<div className="flex flex-col gap-2">
+				<div className="flex flex-col pb-12">
 					<Button 
-						className={cn(
-							"w-full transition-all duration-500",
-							isCTAHighlighted 
-								? "bg-[#C27347] text-white hover:bg-[#A85E3A]" 
-								: "bg-transparent text-foreground hover:bg-accent border border-foreground/10"
-						)} 
-						variant={isCTAHighlighted ? "default" : "outline"}
+						className="w-full h-14 bg-[#C27347] text-white hover:bg-[#A85E3A] font-sans font-semibold uppercase tracking-[0.2em] text-[11px] transition-all duration-300 rounded-full"
 						asChild
+						onClick={() => setOpen(false)}
 					>
 						<a href="https://zeeg.me/info8723/15" target="_blank" rel="noopener noreferrer">15 Min. Telefonat</a>
 					</Button>
@@ -146,15 +139,15 @@ function MobileMenu({ open, children, className, ...props }: MobileMenuProps) {
 		<div
 			id="mobile-menu"
 			className={cn(
-				'bg-background/95 supports-[backdrop-filter]:bg-background/50 backdrop-blur-lg',
-				'fixed top-14 right-0 bottom-0 left-0 z-40 flex flex-col overflow-hidden border-y md:hidden',
+				'bg-canvas/95 supports-[backdrop-filter]:bg-canvas/90 backdrop-blur-xl',
+				'fixed top-14 right-0 bottom-0 left-0 z-40 flex flex-col overflow-hidden border-t border-slate/10 md:hidden',
 			)}
 		>
 			<div
 				data-slot={open ? 'open' : 'closed'}
 				className={cn(
 					'data-[slot=open]:animate-in data-[slot=open]:zoom-in-97 ease-out',
-					'size-full p-4',
+					'size-full px-[5%] py-4',
 					className,
 				)}
 				{...props}

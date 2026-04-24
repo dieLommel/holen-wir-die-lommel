@@ -18,97 +18,77 @@ export default function AGB() {
         <h1 className="font-serif text-5xl md:text-6xl text-slate mb-4 leading-tight tracking-tight">
           Allgemeine Geschäfts&shy;bedingungen
         </h1>
-        <p className="font-sans text-sm text-slate/40 uppercase tracking-widest mb-16">Coaching-Leistungen · Verbraucher & Unternehmer</p>
+        <p className="font-sans text-sm text-slate/40 uppercase tracking-widest mb-16">für Coaching-Leistungen gegenüber Unternehmern</p>
 
         <div className="border-t border-slate/10 pt-16 space-y-10 font-sans text-slate/80 leading-relaxed">
 
           <section>
             <h2 className="font-serif text-2xl text-slate mb-4">§ 1 Geltungsbereich</h2>
-            <p className="mb-3">(1) Diese AGB gelten für alle Verträge mit dem Anbieter über Coaching-Leistungen.</p>
-            <p className="mb-3">(2) Unternehmer im Sinne des § 14 BGB (z. B. Firmen, Selbstständige, Freiberufler) unterliegen den Regelungen in Abschnitt A.</p>
-            <p>(3) Verbraucher im Sinne des § 13 BGB (natürliche Personen, die zu überwiegend privaten Zwecken handeln) unterliegen den Regelungen in Abschnitt B – einschließlich des gesetzlichen Widerrufsrechts.</p>
+            <p className="mb-3">(1) Diese Allgemeinen Geschäftsbedingungen gelten ausschließlich gegenüber Unternehmern im Sinne des § 14 BGB. Verbraucher im Sinne des § 13 BGB werden nicht beliefert.</p>
+            <p className="mb-3">(2) Die AGB gelten auch für zukünftige Geschäfte, ohne dass sie erneut ausdrücklich vereinbart werden müssen.</p>
           </section>
 
-          {/* ABSCHNITT A: B2B */}
-          <div className="border-l-2 border-slate/20 pl-6 py-2">
-            <p className="font-sans text-xs uppercase tracking-widest text-slate/50 mb-6">Abschnitt A — Regelungen für Unternehmer (B2B)</p>
+          <section>
+            <h2 className="font-serif text-2xl text-slate mb-4">§ 2 Vertragsabschluss</h2>
+            <p className="mb-3">(1) Die Coaching-Leistungen werden entweder als Einzelgespräch (90 Minuten, Pauschalpreis 320,- €) oder als individuelle längerfristige Begleitung nach gesonderter Vereinbarung erbracht.</p>
+            <p className="mb-3">(2) Der Vertrag kommt zustande durch schriftliche (inkl. E-Mail) Bestätigung des Termins durch den Anbieter.</p>
+            <p className="mb-3">(3) Ein Widerrufsrecht besteht nicht.</p>
+          </section>
 
-            <div className="space-y-8">
-              <section>
-                <h2 className="font-serif text-2xl text-slate mb-4">§ 2 Vertragsabschluss (B2B)</h2>
-                <p className="mb-3">(1) Coaching wird als Einzelgespräch (90 Minuten, 500 €) oder als längerfristige Begleitung angeboten.</p>
-                <p className="mb-3">(2) Vertragspartner ist, wer den Vertrag abschließt (Firma oder Einzelperson als Unternehmer).</p>
-                <p className="mb-3">(3) Der Vertrag kommt durch schriftliche (inkl. E-Mail) oder mündliche Bestätigung des Termins zustande.</p>
-                <p>(4) Ein Widerrufsrecht besteht nicht.</p>
-              </section>
+          <section>
+            <h2 className="font-serif text-2xl text-slate mb-4">§ 3 Leistungsbeschreibung</h2>
+            <p className="mb-3">(1) Das Einzelcoaching umfasst ein Online- Beratungsgespräch von 90 Minuten Dauer (persönlich, sofern angeboten).</p>
+            <p className="mb-3">(2) Bei längerfristiger Begleitung wird der Umfang (Anzahl der Sitzungen, Dauer, Ziele) vor Vertragsbeginn schriftlich festgehalten.</p>
+            <p className="mb-3">(3) Erfolgsgarantien werden nicht übernommen. Coaching ist ein Prozess, der von der aktiven Mitarbeit des Klienten abhängt.</p>
+          </section>
 
-              <section>
-                <h2 className="font-serif text-2xl text-slate mb-4">§ 3 Vergütung (B2B)</h2>
-                <p className="mb-3">(1) Einzelcoaching: 500 € (Endpreis).</p>
-                <p className="mb-3">(2) Alle Preise inkl. USt., soweit anwendbar. Der Anbieter ist Kleinunternehmer i. S. d. § 19 UStG – es wird keine Umsatzsteuer ausgewiesen.</p>
-                <p>(3) Zahlung sofort fällig nach Rechnungserhalt.</p>
-              </section>
+          <section>
+            <h2 className="font-serif text-2xl text-slate mb-4">§ 4 Vergütung</h2>
+            <p className="mb-3">(1) Das Einzelgespräch kostet 320,- € (Endpreis).</p>
+            <p className="mb-3">(2) Für längerfristige Begleitungen wird ein individueller Honorarsatz vereinbart, der schriftlich bestätigt wird.</p>
+            <p className="mb-3">(3) Alle Preise verstehen sich inkl. der gesetzlichen Umsatzsteuer, soweit diese anfällt. Der Anbieter ist Kleinunternehmer im Sinne des § 19 UStG und erhebt daher keine Umsatzsteuer.</p>
+            <p className="mb-3">(4) Die Rechnung ist sofort mit Zugang fällig und ohne Abzug zu zahlen.</p>
+            <p className="mb-3">(5) Bei längerfristigen Vereinbarungen wird das Honorar in der vereinbarten Form (z. B. Pauschale, Raten) fällig.</p>
+          </section>
 
-              <section>
-                <h2 className="font-serif text-2xl text-slate mb-4">§ 4 Terminabsage (B2B)</h2>
-                <p className="mb-3">(1) Kostenfreie Absage bis 48 Stunden vor Termin.</p>
-                <p>(2) Bei späterer Absage: 100 % Ausfallhonorar – außer bei unverschuldeter Verhinderung (z. B. akute Krankheit mit ärztlichem Nachweis).</p>
-              </section>
+          <section>
+            <h2 className="font-serif text-2xl text-slate mb-4">§ 5 Terminabsage und Ausfallhonorar</h2>
+            <p className="mb-3">(1) Termine können kostenfrei bis 48 Stunden vor Beginn abgesagt oder verschoben werden.</p>
+            <p className="mb-3">(2) Bei Absage weniger als 48 Stunden vor dem Termin wird ein Ausfallhonorar in Höhe von 100 % des vereinbarten Preises fällig – es sei denn, die Absage erfolgt aus Gründen höherer Gewalt oder unverschuldeter Verhinderung (z. B. akute Krankheit mit ärztlichem Nachweis).</p>
+            <p className="mb-3">(3) Der Anbieter behält sich vor, bei wiederholter kurzfristiger Absage künftige Termine nur gegen Vorkasse anzubieten.</p>
+          </section>
 
-              <section>
-                <h2 className="font-serif text-2xl text-slate mb-4">§ 5 Haftung & Vertraulichkeit (B2B)</h2>
-                <p className="mb-3">(1) Haftung beschränkt auf Vorsatz und grobe Fahrlässigkeit.</p>
-                <p className="mb-3">(2) Keine Erfolgsgarantie. Coaching ist ein Prozess, der von der aktiven Mitarbeit des Klienten abhängt.</p>
-                <p>(3) Der Anbieter behandelt alle erhaltenen Informationen streng vertraulich.</p>
-              </section>
+          <section>
+            <h2 className="font-serif text-2xl text-slate mb-4">§ 6 Vertraulichkeit</h2>
+            <p className="mb-3">(1) Der Anbieter verpflichtet sich, alle im Rahmen des Coachings erhaltenen Informationen streng vertraulich zu behandeln.</p>
+            <p className="mb-3">(2) Eine Offenbarung Dritten erfolgt nur, soweit eine gesetzliche Verpflichtung besteht oder der Klient ausdrücklich eingewilligt hat.</p>
+          </section>
 
-              <section>
-                <h2 className="font-serif text-2xl text-slate mb-4">§ 6 Schlussbestimmungen (B2B)</h2>
-                <p className="mb-3">(1) Geltendes Recht: deutsches Recht.</p>
-                <p className="mb-3">(2) Gerichtsstand: Sitz des Anbieters.</p>
-                <p>(3) Sollten einzelne Bestimmungen dieser AGB unwirksam sein, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt.</p>
-              </section>
-            </div>
-          </div>
+          <section>
+            <h2 className="font-serif text-2xl text-slate mb-4">§ 7 Haftung</h2>
+            <p className="mb-3">(1) Die Haftung des Anbieters ist auf Vorsatz und grobe Fahrlässigkeit beschränkt.</p>
+            <p className="mb-3">(2) Keine Haftung wird übernommen für: entgangenen Gewinn, mittelbare Schäden, Folgeschäden aus Entscheidungen des Klienten auf Grundlage des Coachings.</p>
+            <p className="mb-3">(3) Unbeschränkt haftet der Anbieter bei Verletzung des Lebens, des Körpers oder der Gesundheit sowie nach dem Produkthaftungsgesetz.</p>
+          </section>
 
-          {/* ABSCHNITT B: B2C */}
-          <div className="border-l-2 border-mint/40 pl-6 py-2">
-            <p className="font-sans text-xs uppercase tracking-widest text-slate/50 mb-6">Abschnitt B — Regelungen für Verbraucher (B2C)</p>
+          <section>
+            <h2 className="font-serif text-2xl text-slate mb-4">§ 8 Urheberrecht</h2>
+            <p className="mb-3">(1) Alle vom Anbieter erstellten Materialien (z. B. Handouts, Übungen, Protokolle) sind urheberrechtlich geschützt.</p>
+            <p className="mb-3">(2) Der Klient erhält ein einfaches, nicht übertragbares Nutzungsrecht zur internen Verwendung.</p>
+            <p className="mb-3">(3) Weitergabe, Vervielfältigung oder öffentliche Zugänglichmachung bedarf der ausdrücklichen schriftlichen Genehmigung.</p>
+          </section>
 
-            <div className="space-y-8">
-              <section>
-                <h2 className="font-serif text-2xl text-slate mb-4">§ 7 Widerrufsrecht</h2>
-                <p className="mb-3">(1) Verbraucher können den Vertrag innerhalb von 14 Tagen ohne Angabe von Gründen widerrufen.</p>
-                <p className="mb-3">(2) Die Widerrufsfrist beginnt mit Vertragsschluss.</p>
-                <p>(3) Das Widerrufsrecht erlischt vorzeitig, sobald die Leistung vollständig erbracht ist und der Kunde vor Beginn ausdrücklich zugestimmt hat, dass der Anbieter mit der Leistung beginnt – und bestätigt hat, dass ihm bewusst ist, dass er bei vollständiger Leistungserbringung sein Widerrufsrecht verliert.</p>
-              </section>
+          <section>
+            <h2 className="font-serif text-2xl text-slate mb-4">§ 9 Datenschutz</h2>
+            <p className="mb-3">Es gilt die separate Datenschutzerklärung <Link href="/datenschutz" className="underline underline-offset-4 hover:text-slate transition-colors">hier</Link> auf der Website des Anbieters, die Bestandteil der vertraglichen Vereinbarung ist.</p>
+          </section>
 
-              <section>
-                <h2 className="font-serif text-2xl text-slate mb-4">§ 8 Vergütung (B2C)</h2>
-                <p className="mb-3">(1) Einzelcoaching: Preis wird vor Vertragsabschluss schriftlich kommuniziert.</p>
-                <p>(2) Der Anbieter ist Kleinunternehmer i. S. d. § 19 UStG – es wird keine Umsatzsteuer ausgewiesen.</p>
-              </section>
-
-              <section>
-                <h2 className="font-serif text-2xl text-slate mb-4">§ 9 Terminabsage (B2C)</h2>
-                <p className="mb-3">(1) Kostenfreie Absage bis 48 Stunden vor Termin.</p>
-                <p>(2) Bei späterer Absage: 100 % Ausfallhonorar – außer bei unverschuldeter Verhinderung.</p>
-              </section>
-
-              <section>
-                <h2 className="font-serif text-2xl text-slate mb-4">§ 10 Haftung & Vertraulichkeit (B2C)</h2>
-                <p className="mb-3">(1) Haftung beschränkt auf Vorsatz und grobe Fahrlässigkeit, außer bei Verletzung von Leben, Körper oder Gesundheit.</p>
-                <p className="mb-3">(2) Keine Erfolgsgarantie.</p>
-                <p>(3) Strenge Vertraulichkeit aller im Rahmen des Coachings erhaltenen Informationen.</p>
-              </section>
-
-              <section>
-                <h2 className="font-serif text-2xl text-slate mb-4">§ 11 Schlussbestimmungen (B2C)</h2>
-                <p className="mb-3">(1) Geltendes Recht: deutsches Recht.</p>
-                <p>(2) Sollten einzelne Bestimmungen dieser AGB unwirksam sein, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt.</p>
-              </section>
-            </div>
-          </div>
+          <section>
+            <h2 className="font-serif text-2xl text-slate mb-4">§ 10 Schlussbestimmungen</h2>
+            <p className="mb-3">(1) Es gilt ausschließlich deutsches Recht unter Ausschluss des UN-Kaufrechts.</p>
+            <p className="mb-3">(2) Erfüllungsort und Gerichtsstand ist der Sitz des Anbieters, sofern der Vertragspartner Kaufmann, juristische Person des öffentlichen Rechts oder öffentlich-rechtliches Sondervermögen ist.</p>
+            <p className="mb-3">(3) Sollte eine Bestimmung dieser AGB unwirksam sein, bleibt die Wirksamkeit der übrigen Klauseln unberührt. Anstelle der unwirksamen Regelung tritt eine wirksame, die dem wirtschaftlichen Zweck am nächsten kommt.</p>
+          </section>
 
         </div>
 

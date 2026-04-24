@@ -6,8 +6,8 @@ import Solution from "@/components/sections/Solution";
 import AboutStory from "@/components/sections/AboutStory";
 import Pricing from "@/components/sections/Pricing";
 import Process from "@/components/sections/Process";
-import CTA from "@/components/sections/CTA";
 import FAQ from "@/components/sections/FAQ";
+import CTA from "@/components/sections/CTA";
 import Footer from "@/components/sections/Footer";
 
 export const metadata = {

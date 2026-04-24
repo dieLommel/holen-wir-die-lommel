@@ -1,53 +1,66 @@
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
 
 export const metadata = {
   title: "Impressum | Holen wir die Lommel",
-  description: "Impressum von Stefanie Lommel",
 };
 
-export default function ImpressumPage() {
+export default function Impressum() {
   return (
-    <main className="min-h-screen bg-beige text-slate pt-24 pb-20 px-4 md:px-[5%] selection:bg-[#C27347] selection:text-white">
-      <div className="max-w-3xl mx-auto">
-        <Link 
-          href="/"
-          className="inline-flex items-center gap-2 text-xs font-sans font-bold uppercase tracking-[0.2em] text-[#C27347] hover:text-[#A85E3A] transition-colors mb-12"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Zurück zur Startseite
+    <main className="min-h-screen bg-canvas text-slate">
+      <div className="h-20" />
+
+      <div className="container mx-auto max-w-3xl px-[5%] py-24">
+        <Link href="/" className="font-sans text-xs uppercase tracking-widest text-slate/50 hover:text-slate transition-colors mb-12 inline-block">
+          ← Zurück
         </Link>
-        
-        <h1 className="font-serif text-4xl md:text-5xl text-onyx mb-10">Impressum</h1>
-        
-        <div className="prose prose-slate prose-headings:font-serif prose-p:font-sans prose-a:text-[#C27347] max-w-none">
-          <p className="font-sans text-sm text-slate/70 mb-8 italic">
-            (Platzhalter - Bitte die finalen Rechtstexte von eRecht24 oder deinem Anwalt hier einfügen)
-          </p>
 
-          <h2 className="text-xl font-serif text-onyx mt-8 mb-4">Angaben gemäß § 5 TMG</h2>
-          <p>
-            Stefanie Lommel<br />
-            [Straße Hausnummer]<br />
-            [PLZ Ort]
-          </p>
+        <div className="font-serif italic text-slate/50 text-lg mb-4">Rechtliches</div>
+        <h1 className="font-serif text-5xl md:text-6xl text-slate mb-16 leading-tight tracking-tight">
+          Impressum
+        </h1>
 
-          <h2 className="text-xl font-serif text-onyx mt-8 mb-4">Kontakt</h2>
-          <p>
-            Telefon: [Telefonnummer]<br />
-            E-Mail: info@dieLommel.de
-          </p>
+        <div className="border-t border-slate/10 pt-16 space-y-12 font-sans text-slate/80 leading-relaxed">
 
-          <h2 className="text-xl font-serif text-onyx mt-8 mb-4">Umsatzsteuer-ID</h2>
-          <p>
-            Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
-            [DE XXX XXX XXX]
-          </p>
+          <section>
+            <h2 className="font-serif text-2xl text-slate mb-4">Angaben gemäß § 5 TMG</h2>
+            <p>
+              Stefanie Lommel<br />
+              Niederried 19<br />
+              82069 Hohenschäftlarn<br />
+              Deutschland
+            </p>
+          </section>
 
-          <h2 className="text-xl font-serif text-onyx mt-8 mb-4">Verbraucherstreitbeilegung/Universalschlichtungsstelle</h2>
-          <p>
-            Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
-          </p>
+          <section>
+            <h2 className="font-serif text-2xl text-slate mb-4">Kontakt</h2>
+            <p>
+              E-Mail: <a href="mailto:info@dieLommel.de" className="underline underline-offset-4 hover:text-slate transition-colors">info@dieLommel.de</a>
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-serif text-2xl text-slate mb-4">Umsatzsteuer</h2>
+            <p>
+              Gemäß § 19 UStG wird keine Umsatzsteuer berechnet (Kleinunternehmerregelung).
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-serif text-2xl text-slate mb-4">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+            <p>
+              Stefanie Lommel<br />
+              Niederried 19<br />
+              82069 Hohenschäftlarn<br />
+              Deutschland
+            </p>
+          </section>
+
+        </div>
+
+        <div className="border-t border-slate/10 mt-24 pt-8 flex gap-6 flex-wrap">
+          <Link href="/datenschutz" className="font-sans text-xs uppercase tracking-widest text-slate/50 hover:text-slate transition-colors">Datenschutz</Link>
+          <Link href="/agb" className="font-sans text-xs uppercase tracking-widest text-slate/50 hover:text-slate transition-colors">AGB</Link>
+          <Link href="/" className="font-sans text-xs uppercase tracking-widest text-slate/50 hover:text-slate transition-colors">Startseite</Link>
         </div>
       </div>
     </main>

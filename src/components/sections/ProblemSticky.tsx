@@ -75,14 +75,14 @@ export default function ProblemSticky() {
         </svg>
       </div>
 
-      <div className="container mx-auto max-w-7xl px-[5%] py-32 md:py-48 relative z-10">
+      <div className="container mx-auto max-w-7xl px-[5%] pt-32 pb-16 md:py-48 relative z-10">
         
         {/* Sticky Cascade Viewport */}
-        <div className="relative pb-[20vh] lg:pb-[10vh]">
+        <div className="relative">
           {STICKY_CARDS.map((card, index) => (
             <div 
               key={card.id} 
-              className="sticky top-8 lg:top-[15vh] mb-[15vh] lg:mb-[25vh] last:mb-0 flex items-center justify-center w-full"
+              className="sticky top-8 lg:top-[15vh] mb-8 lg:mb-[25vh] last:mb-0 w-full"
               style={{ zIndex: index * 10 }}
             >
               <motion.div 
@@ -90,7 +90,7 @@ export default function ProblemSticky() {
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true, margin: "-10%" }}
                 transition={{ duration: 1.2, ease: VANGUARD_EASE }}
-                className={`w-full ${card.rotate} bg-surface border border-slate/10 rounded-none p-6 md:p-14 lg:p-20 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center`}
+                className={`w-full ${card.rotate} bg-surface border border-slate/10 rounded-none p-6 md:p-14 lg:p-20 flex flex-col lg:grid lg:grid-cols-2 gap-12 lg:gap-24 items-start lg:items-center`}
               >
                 {/* Text Inner Core */}
                 <div className={`flex flex-col relative ${card.imageLeft ? 'lg:order-last lg:pl-10' : 'lg:pr-10'}`}>
@@ -112,7 +112,7 @@ export default function ProblemSticky() {
                 </div>
 
                 {/* Flat Image Box */}
-                <div className={`border border-slate/10 relative w-full aspect-[4/5] lg:aspect-square ${card.imageLeft ? 'lg:order-first' : ''}`}>
+                <div className={`border border-slate/10 relative w-full aspect-[4/5] lg:aspect-square overflow-hidden ${card.imageLeft ? 'lg:order-first' : ''}`}>
                     <Image
                       src={card.img}
                       alt={card.label}

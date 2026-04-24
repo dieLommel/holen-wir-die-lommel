@@ -66,7 +66,7 @@ export default function Hero() {
 
       loadedImages.push(img);
     }
-  }, []);
+  }, [isMounted, isMobile]);
 
   // 2. Render Canvas Frame
   const renderFrame = (progress: number) => {
@@ -145,7 +145,7 @@ export default function Hero() {
   // Render Mobile Fallback instantly to avoid loading 146 frames
   if (isMounted && isMobile) {
     return (
-      <section id="hero-mobile" className="relative w-full h-[100svh] bg-black overflow-hidden flex items-center">
+      <section ref={containerRef} id="hero-mobile" className="relative w-full h-[100svh] bg-black overflow-hidden flex items-center">
         {/* Static Frame Background instead of heavy sequence */}
         <div className="absolute inset-0 w-full h-full">
           <Image 
@@ -203,7 +203,7 @@ export default function Hero() {
   }
 
   // Prevents hydration mismatch by not rendering sequence wrapper until mounted
-  if (!isMounted) return <section className="w-full h-screen bg-black" />;
+  if (!isMounted) return <section ref={containerRef} className="w-full h-screen bg-black" />;
 
   return (
     <section ref={containerRef} id="hero-desktop" className="relative w-full h-[400vh] bg-black">
