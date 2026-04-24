@@ -82,7 +82,7 @@ export function Header() {
 						className={cn(
 							"transition-all duration-500",
 							isCTAHighlighted 
-								? "bg-[#C27347] text-white hover:bg-[#A85E3A]" 
+								? "bg-onyx text-white hover:bg-onyx/90" 
 								: scrolled ? "bg-transparent text-onyx hover:bg-onyx/5" : "bg-transparent text-white hover:bg-white/10"
 						)}
 					>
@@ -106,7 +106,7 @@ export function Header() {
 					{links.map((link) => (
 						<a
 							key={link.label}
-							className="font-serif text-4xl text-slate hover:text-[#C27347] transition-colors py-5 border-b border-slate/10"
+							className="font-serif text-4xl text-slate hover:text-slate/80 transition-colors py-5 border-b border-slate/10"
 							href={link.href}
 							onClick={() => setOpen(false)}
 						>
@@ -116,7 +116,7 @@ export function Header() {
 				</div>
 				<div className="flex flex-col pb-12">
 					<Button 
-						className="w-full h-14 bg-[#C27347] text-white hover:bg-[#A85E3A] font-sans font-semibold uppercase tracking-[0.2em] text-[11px] transition-all duration-300 rounded-full"
+						className="w-full h-14 bg-onyx text-white hover:bg-onyx/90 font-sans font-semibold uppercase tracking-[0.2em] text-[11px] transition-all duration-300 rounded-full"
 						asChild
 						onClick={() => setOpen(false)}
 					>

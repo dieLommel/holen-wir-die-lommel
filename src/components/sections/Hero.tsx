@@ -176,7 +176,7 @@ export default function Hero() {
             
             <h1 className="font-serif text-4xl leading-[1.1] text-white mb-6 text-balance tracking-tight">
               Klarheit auf Entscheidungsebene,<br />
-              <span className="italic text-[#C27347] font-light">wenn viel auf dem Spiel steht.</span>
+              <span className="italic text-white/75 font-light">wenn viel auf dem Spiel steht.</span>
             </h1>
             
             {/* Refined Text */}
@@ -189,11 +189,11 @@ export default function Hero() {
               href="https://zeeg.me/info8723/15"
               target="_blank"
               rel="noopener noreferrer"
-              className="group w-full rounded-full bg-[#C27347] pl-8 pr-2 py-2 flex items-center justify-between gap-6 text-[11px] font-sans font-semibold uppercase tracking-[0.2em] text-white transition-all hover:bg-[#A85E3A] shadow-lg"
+              className="group w-full rounded-full bg-white pl-8 pr-2 py-2 flex items-center justify-between gap-6 text-[11px] font-sans font-semibold uppercase tracking-[0.2em] text-black transition-all shadow-lg"
             >
               <span>Akut: 15 Min. Telefonat</span>
-              <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center shrink-0">
-                <ArrowUpRight className="w-4 h-4 text-white" strokeWidth={1.5} />
+              <div className="w-10 h-10 rounded-full bg-black/10 flex items-center justify-center shrink-0">
+                <ArrowUpRight className="w-4 h-4 text-black" strokeWidth={1.5} />
               </div>
             </Link>
           </motion.div>
@@ -256,7 +256,7 @@ export default function Hero() {
               
               <h1 className="font-serif text-4xl md:text-6xl lg:text-[5.5rem] leading-[1.05] text-white mb-8 text-balance tracking-tight">
                 Klarheit auf Entscheidungsebene,<br />
-                <span className="italic text-[#C27347] font-light">wenn viel auf dem Spiel steht.</span>
+                <span className="italic text-white/80 font-light">wenn viel auf dem Spiel steht.</span>
               </h1>
               
               {/* Refined Text */}
@@ -269,11 +269,11 @@ export default function Hero() {
                 href="https://zeeg.me/info8723/15"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group w-full sm:w-max rounded-full bg-[#C27347] pl-8 pr-2 py-2 flex items-center justify-between sm:justify-center gap-6 text-[11px] font-sans font-semibold uppercase tracking-[0.2em] text-white transition-all duration-500 hover:bg-[#A85E3A] hover:shadow-[0_4px_20px_rgba(194,115,71,0.35)]"
+                className="group w-full sm:w-max rounded-full bg-white pl-8 pr-2 py-2 flex items-center justify-between sm:justify-center gap-6 text-[11px] font-sans font-semibold uppercase tracking-[0.2em] text-black transition-all duration-500 shadow-2xl shadow-white/10"
               >
                 <span>Akut: 15 Min. Telefonat</span>
-                <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center transition-transform group-hover:bg-white/30">
-                  <ArrowUpRight className="w-4 h-4 text-white" strokeWidth={1.5} />
+                <div className="w-10 h-10 rounded-full bg-black/10 flex items-center justify-center transition-transform border border-black/5">
+                  <ArrowUpRight className="w-4 h-4 text-black" strokeWidth={1.5} />
                 </div>
               </Link>
             </motion.div>
