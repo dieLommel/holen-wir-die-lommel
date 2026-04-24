@@ -73,9 +73,24 @@ export default function Solution() {
             ))}
           </div>
 
-          {/* Right Column: 3D Rock */}
+          {/* Right Column: 3D Rock (desktop) / static image (mobile) */}
           <div className="w-full flex items-center justify-center pointer-events-auto">
-            <GoldenRockScene />
+            <div className="hidden lg:flex w-full items-center justify-center">
+              <GoldenRockScene />
+            </div>
+            <div className="lg:hidden w-full max-w-sm flex flex-col gap-6 items-center text-center">
+              <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-lg border border-slate/5">
+                <Image
+                  src="/images/stefanie_rote_kette.jpg"
+                  alt="Stefanie Lommel"
+                  fill
+                  className="object-cover object-top"
+                />
+              </div>
+              <p className="font-serif italic text-slate/80 text-base px-2 leading-relaxed">
+                Kintsugi — die Kunst, Brüche in<br />Stärke und Klarheit zu verwandeln.
+              </p>
+            </div>
           </div>
 
         </div>

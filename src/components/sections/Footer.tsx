@@ -65,6 +65,9 @@ export default function Footer() {
               <li>
                 <Link href="/datenschutz" className="hover:text-[#C27347] transition-colors duration-300">Datenschutz</Link>
               </li>
+              <li>
+                <Link href="/agb" className="hover:text-[#C27347] transition-colors duration-300">AGB</Link>
+              </li>
             </ul>
           </div>
         </div>
