@@ -67,7 +67,12 @@ export default function AGB() {
           <section>
             <h2 className="font-serif text-2xl text-slate mb-4">§ 7 Haftung</h2>
             <p className="mb-3">(1) Die Haftung des Anbieters ist auf Vorsatz und grobe Fahrlässigkeit beschränkt.</p>
-            <p className="mb-3">(2) Keine Haftung wird übernommen für: entgangenen Gewinn, mittelbare Schäden, Folgeschäden aus Entscheidungen des Klienten auf Grundlage des Coachings.</p>
+            <p className="mb-3">(2) Keine Haftung wird übernommen für:</p>
+            <ul className="list-none pl-6 mb-3 space-y-1">
+              <li>– entgangenen Gewinn,</li>
+              <li>– mittelbare Schäden,</li>
+              <li>– Folgeschäden aus Entscheidungen des Klienten auf Grundlage des Coachings.</li>
+            </ul>
             <p className="mb-3">(3) Unbeschränkt haftet der Anbieter bei Verletzung des Lebens, des Körpers oder der Gesundheit sowie nach dem Produkthaftungsgesetz.</p>
           </section>
 
