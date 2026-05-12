@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter, Caveat } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -34,10 +35,16 @@ export default function RootLayout({
       className={`${cormorant.variable} ${inter.variable} ${caveat.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body 
+      <body
         className="min-h-full flex flex-col font-sans selection:bg-mint/30 selection:text-slate"
         suppressHydrationWarning
       >
+        <Script
+          id="umami-analytics"
+          src="https://analytics.sabala-mentoring.com/script.js"
+          data-website-id="35deb602-45f1-469e-b566-3f13e52ae97b"
+          strategy="afterInteractive"
+        />
         {children}
       </body>
     </html>
