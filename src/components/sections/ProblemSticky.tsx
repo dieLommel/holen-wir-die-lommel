@@ -32,7 +32,7 @@ const STICKY_CARDS = [
     label: "Die Angst vor Verrat",
     title: "Wir können das den Menschen nicht antun.",
     desc: "Jeder Ausweg fühlt sich an, als müsse man jemandes Vertrauen verraten. So wie früher geht es nicht mehr – aber wie dann? Diese Starre führt schleichend, aber todsicher in die Katastrophe.",
-    img: "/images/stefanie-steinmauer.png",
+    img: "/images/stefanie-steinmauer.jpg",
     imgClass: "object-cover object-top saturate-[0.9] contrast-[1.05] sepia-[0.1] hover:saturate-100 hover:sepia-0 transition-all duration-1000",
     rotate: "lg:-rotate-[0.5deg]",
     imageLeft: false

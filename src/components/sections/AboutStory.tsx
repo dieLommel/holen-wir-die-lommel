@@ -91,7 +91,7 @@ export default function AboutStory() {
             <div className="w-full mx-auto relative p-2 md:p-3 border-[1px] border-slate/10 bg-canvas/40 shadow-sm">
               <div className="relative aspect-[4/5] w-full overflow-hidden bg-slate/5">
                 <Image
-                  src="/images/stefanie-portrait.png"
+                  src="/images/stefanie-portrait.jpg"
                   alt="Stefanie Lommel"
                   fill
                   className="object-contain saturate-100 contrast-[1.05] hover:saturate-[1.1] transition-all duration-[1.5s] ease-out"
