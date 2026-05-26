@@ -85,14 +85,14 @@ export default function ArticleHero({
         </motion.div>
       </header>
 
-      {/* Title-Sektion direkt darunter, magazinähnlich */}
+      {/* Title-Sektion direkt darunter, magazinähnlich — VOLLBREITES Display */}
       <section className="bg-canvas pt-20 pb-12 lg:pt-28 lg:pb-16 border-b border-slate/10">
-        <div className="container mx-auto px-[5%] lg:px-[8%] max-w-6xl">
+        <div className="w-full px-[5%] lg:px-[6%] max-w-[88rem] mx-auto">
           <motion.h1
             initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 1.4, ease: VANGUARD_EASE, delay: 0.2 }}
-            className="font-serif text-[2.25rem] md:text-5xl lg:text-[4.5rem] xl:text-[5.5rem] leading-[1.02] text-slate font-medium tracking-tight text-balance mb-10"
+            className="font-serif text-[2.25rem] md:text-[3.5rem] lg:text-[5rem] xl:text-[6rem] 2xl:text-[6.5rem] leading-[0.98] text-slate font-medium tracking-tight text-balance mb-10"
           >
             {title}
           </motion.h1>
