@@ -25,9 +25,8 @@ export default function BlogCardFeatured({ post }: Props) {
     ? {}
     : {
         initial: { opacity: 0, y: 30 },
-        whileInView: { opacity: 1, y: 0 },
-        viewport: { once: true, margin: "-10%" },
-        transition: { duration: 1.2, ease: VANGUARD_EASE },
+        animate: { opacity: 1, y: 0 },
+        transition: { duration: 1.2, ease: VANGUARD_EASE, delay: 0.1 },
       };
 
   return (
