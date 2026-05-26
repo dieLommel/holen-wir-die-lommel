@@ -1,6 +1,6 @@
 "use client";
 
-import { Children, isValidElement, ReactNode } from "react";
+import { Children } from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import ReactMarkdown from "react-markdown";
@@ -85,27 +85,29 @@ export default function ArticleBody({ content }: Props) {
               {children}
             </h3>
           ),
-          p: ({ children }) => {
-            // Pattern-Detect: Erstes Child ist <strong>, dessen Text matched
-            // "Option 1: Title." | "Falle 2: Title." | "Schritt 3 (heute):" etc.
-            const arr = Children.toArray(children);
-            const first = arr[0];
-            if (isValidElement(first) && first.type === "strong") {
-              const strongChildren = (first.props as { children?: ReactNode }).children;
-              const strongText = String(
-                Array.isArray(strongChildren)
-                  ? strongChildren.map((c) => (typeof c === "string" ? c : "")).join("")
-                  : strongChildren ?? ""
-              ).trim();
+          p: ({ children, node }) => {
+            // Pattern-Detect via AST-Node: erstes Child ist ein "strong"-Knoten,
+            // dessen Text dem INLINE_NUMBERED_PATTERN entspricht.
+            const astChildren = (node as { children?: Array<{ type?: string; tagName?: string; children?: Array<{ value?: string }> }> })
+              ?.children;
+            const firstAst = astChildren?.[0];
+            const isStrongNode =
+              firstAst && (firstAst.tagName === "strong" || firstAst.type === "strong");
+
+            if (isStrongNode && firstAst.children) {
+              const strongText = firstAst.children
+                .map((c) => c.value ?? "")
+                .join("")
+                .trim();
               const match = strongText.match(INLINE_NUMBERED_PATTERN);
               if (match) {
-                // Body = restliche Children nach dem <strong>
-                const rest = arr.slice(1).map((node, i) => {
-                  if (typeof node === "string") {
-                    // führendes Leerzeichen/Punkt entfernen
-                    return <span key={i}>{node.replace(/^[\s.]+/, "")}</span>;
+                // Body = alle React-Children außer dem ersten (= dem <strong>)
+                const arr = Children.toArray(children);
+                const rest = arr.slice(1).map((nodeChild, i) => {
+                  if (typeof nodeChild === "string") {
+                    return <span key={i}>{nodeChild.replace(/^[\s.]+/, "")}</span>;
                   }
-                  return <span key={i}>{node}</span>;
+                  return <span key={i}>{nodeChild}</span>;
                 });
                 return (
                   <NumberedOptionCard
