@@ -4,6 +4,7 @@ import { Header } from "@/components/ui/header-1";
 import Footer from "@/components/sections/Footer";
 import { JsonLd } from "@/components/ui/JsonLd";
 import BlogCardWithImage from "@/components/blog/BlogCardWithImage";
+import BlogCardFeatured from "@/components/blog/BlogCardFeatured";
 import BlogHeroReveal from "@/components/blog/BlogHeroReveal";
 import { getAllBlogPosts } from "@/lib/blog";
 import { buildItemListSchema } from "@/lib/schema";
@@ -23,6 +24,7 @@ export const metadata: Metadata = {
 
 export default async function BlogIndex() {
   const posts = await getAllBlogPosts();
+  const [featured, ...rest] = posts;
 
   return (
     <main className="flex min-h-screen flex-col bg-canvas">
@@ -45,7 +47,7 @@ export default async function BlogIndex() {
         <BlogHeroReveal />
       </header>
 
-      {/* Blog-Grid mit Cards + Bildern */}
+      {/* MAGAZINE-LAYOUT: Featured first + restliche */}
       <section className="bg-canvas py-24 lg:py-32 border-b border-slate/10">
         <div className="container mx-auto px-[5%] max-w-7xl">
           {posts.length === 0 ? (
@@ -53,11 +55,28 @@ export default async function BlogIndex() {
               Noch keine Beiträge veröffentlicht.
             </p>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-              {posts.map((post, idx) => (
-                <BlogCardWithImage key={post.slug} post={post} index={idx} />
-              ))}
-            </div>
+            <>
+              {/* Featured: erster Post als großes Hero-Item */}
+              {featured && <BlogCardFeatured post={featured} />}
+
+              {/* Editorial-Trenner */}
+              {rest.length > 0 && (
+                <div className="mb-16 lg:mb-20 flex items-center gap-6">
+                  <span className="block w-12 h-[1px] bg-slate/20" />
+                  <span className="font-serif italic text-slate/60 text-lg">
+                    Weitere Beiträge
+                  </span>
+                  <span className="block flex-1 h-[1px] bg-slate/10" />
+                </div>
+              )}
+
+              {/* Restliche Beiträge in 3-Col-Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+                {rest.map((post, idx) => (
+                  <BlogCardWithImage key={post.slug} post={post} index={idx} />
+                ))}
+              </div>
+            </>
           )}
         </div>
       </section>

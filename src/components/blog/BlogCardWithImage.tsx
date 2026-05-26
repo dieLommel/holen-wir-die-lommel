@@ -27,26 +27,26 @@ export default function BlogCardWithImage({ post, index = 0 }: Props) {
     >
       <Link
         href={`/blog/${post.slug}`}
-        className="group flex flex-col h-full bg-surface border border-slate/5 overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:-translate-y-1 hover:shadow-[0_32px_64px_-24px_rgba(26,26,24,0.18)]"
+        className="group flex flex-col h-full"
       >
         {/* Cover Image */}
-        <div className="relative w-full aspect-[3/2] overflow-hidden bg-slate/5">
+        <div className="relative w-full aspect-[3/2] overflow-hidden bg-slate/5 mb-7">
           <Image
             src={cover}
             alt={alt}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-            className="object-cover transition-transform duration-1000 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.04]"
+            className="object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.04]"
           />
         </div>
 
-        {/* Card-Body */}
-        <div className="p-8 lg:p-10 flex flex-col flex-grow">
-          <h2 className="font-serif text-2xl lg:text-[1.75rem] leading-[1.18] text-slate font-medium mb-4 tracking-tight group-hover:text-[#A85E3A] transition-colors duration-500">
+        {/* Card-Body — kein Card-Background, editorial-clean */}
+        <div className="flex flex-col flex-grow">
+          <h2 className="font-serif text-2xl lg:text-[1.875rem] leading-[1.15] text-slate font-medium mb-4 tracking-tight group-hover:text-[#A85E3A] transition-colors duration-500">
             {post.frontmatter.title}
           </h2>
 
-          <p className="font-sans text-base text-slate/70 leading-[1.65] font-light flex-grow mb-6">
+          <p className="font-sans text-base text-slate/70 leading-[1.65] font-light flex-grow mb-7">
             {post.frontmatter.excerpt}
           </p>
 
