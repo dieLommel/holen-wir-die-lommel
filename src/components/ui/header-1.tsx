@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import Link from 'next/link';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { MenuToggleIcon } from '@/components/ui/menu-toggle-icon';
@@ -31,15 +32,19 @@ export function Header() {
 	const links = [
 		{
 			label: 'Problem',
-			href: '#problem',
+			href: '/#problem',
 		},
 		{
 			label: 'Lösung',
-			href: '#loesung',
+			href: '/#loesung',
 		},
 		{
 			label: 'Angebot',
-			href: '#angebote',
+			href: '/#angebote',
+		},
+		{
+			label: 'Schreibtisch',
+			href: '/blog',
 		},
 	];
 
@@ -63,18 +68,18 @@ export function Header() {
 			)}
 		>
 			<nav className="mx-auto flex h-14 w-full max-w-7xl items-center justify-between px-4 lg:px-[5%]">
-				<div className="hover:bg-white/10 rounded-md p-2 transition-colors">
-					<span className={cn("font-serif font-bold text-xl tracking-wider uppercase transition-colors duration-300", scrolled ? "text-onyx" : "text-white")}>Holen wir die Lommel</span>
-				</div>
+				<Link href="/" className="hover:bg-white/10 rounded-md p-2 transition-colors" aria-label="Zur Startseite">
+						<span className={cn("font-serif font-bold text-xl tracking-wider uppercase transition-colors duration-300", scrolled ? "text-onyx" : "text-white")}>Holen wir die Lommel</span>
+					</Link>
 				<div className="hidden items-center gap-2 md:flex">
 					{links.map((link) => (
-						<a 
+						<Link 
 							key={link.label} 
 							className={cn(buttonVariants({ variant: 'ghost' }), "transition-colors duration-300", scrolled ? "text-onyx hover:bg-onyx/5" : "text-white/90 hover:text-white hover:bg-white/10")} 
 							href={link.href}
 						>
 							{link.label}
-						</a>
+						</Link>
 					))}
 					<Button 
 						asChild 
@@ -104,14 +109,14 @@ export function Header() {
 			<MobileMenu open={open} className="flex flex-col justify-between">
 				<div className="flex flex-col gap-y-2 pt-8">
 					{links.map((link) => (
-						<a
-							key={link.label}
-							className="font-serif text-4xl text-slate hover:text-slate/80 transition-colors py-5 border-b border-slate/10"
-							href={link.href}
-							onClick={() => setOpen(false)}
-						>
+						<Link
+								key={link.label}
+								className="font-serif text-4xl text-slate hover:text-slate/80 transition-colors py-5 border-b border-slate/10"
+								href={link.href}
+								onClick={() => setOpen(false)}
+							>
 							{link.label}
-						</a>
+						</Link>
 					))}
 				</div>
 				<div className="flex flex-col pb-12">

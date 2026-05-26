@@ -2,11 +2,13 @@ import { Header } from "@/components/ui/header-1";
 import Hero from "@/components/sections/Hero";
 import Identification from "@/components/sections/Identification";
 import ProblemSticky from "@/components/sections/ProblemSticky";
+import WandelbegleitungDefinition from "@/components/sections/WandelbegleitungDefinition";
 import Solution from "@/components/sections/Solution";
 import AboutStory from "@/components/sections/AboutStory";
 import Pricing from "@/components/sections/Pricing";
 import Process from "@/components/sections/Process";
 import FAQ from "@/components/sections/FAQ";
+import AusMeinemSchreibtisch from "@/components/sections/AusMeinemSchreibtisch";
 import CTA from "@/components/sections/CTA";
 import Footer from "@/components/sections/Footer";
 
@@ -22,11 +24,13 @@ export default function Home() {
       <Hero />
       <Identification />
       <ProblemSticky />
+      <WandelbegleitungDefinition />
       <AboutStory />
       <Solution />
       <Process />
       <Pricing />
       <FAQ />
+      <AusMeinemSchreibtisch />
       <CTA />
       <Footer />
     </main>

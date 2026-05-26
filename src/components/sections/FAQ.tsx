@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { JsonLd } from "@/components/ui/JsonLd";
+import { buildFaqSchema } from "@/lib/schema";
 
 const VANGUARD_EASE = [0.32, 0.72, 0, 1] as const;
 
@@ -41,6 +43,11 @@ const faqs = [
     answer:
       "Auf jeden Fall, ja! Dieses Angebot bezieht sich nicht nur auf Unternehmer, sondern natürlich auch auf Unternehmerinnen.",
   },
+  {
+    question: "Mein Kind will das Unternehmen nicht übernehmen — was jetzt?",
+    answer:
+      "Erstmal: nichts entscheiden. Die schlechtesten Übergabe-Entscheidungen werden in den ersten zwei Wochen nach so einem Gespräch getroffen — weil Trauer und Verantwortung gleichzeitig drücken. Wenn der erste Schmerz aus dem Körper raus ist, gibt es vier echte Optionen: externe Geschäftsführung mit familiärer Eigentümerschaft, Management-Buy-Out durch Schlüsselkräfte, strategischer Verkauf an einen kulturell passenden Käufer, oder geordnete Schließung mit Würde. Welche Option in deiner Konstellation wirklich passt, lässt sich in einem 90-Minuten-Gespräch sortieren.",
+  },
 ];
 
 export default function FAQ() {
@@ -52,6 +59,7 @@ export default function FAQ() {
 
   return (
     <section id="faq" className="px-[5%] py-32 lg:py-48 bg-canvas text-slate border-b border-slate/10">
+      <JsonLd data={buildFaqSchema(faqs)} />
       <div className="container mx-auto max-w-4xl">
 
         {/* Section Header */}

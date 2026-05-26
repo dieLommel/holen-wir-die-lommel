@@ -1,0 +1,46 @@
+# robots.txt für dielommel.de
+# Wandelbegleitung für Familien- und Traditionsunternehmen
+
+User-agent: *
+Allow: /
+
+# AI-Crawler explizit erlauben (GEO-Strategie 2026)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# Sitemap + AI-Übersicht
+Sitemap: https://dielommel.de/sitemap.xml
+Sitemap: https://dielommel.de/llms.txt
