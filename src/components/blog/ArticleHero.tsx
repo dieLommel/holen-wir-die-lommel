@@ -87,12 +87,12 @@ export default function ArticleHero({
 
       {/* Title-Sektion direkt darunter, magazinähnlich */}
       <section className="bg-canvas pt-20 pb-12 lg:pt-28 lg:pb-16 border-b border-slate/10">
-        <div className="container mx-auto px-[5%] max-w-3xl">
+        <div className="container mx-auto px-[5%] lg:px-[8%] max-w-6xl">
           <motion.h1
             initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 1.4, ease: VANGUARD_EASE, delay: 0.2 }}
-            className="font-serif text-4xl md:text-5xl lg:text-[3.75rem] leading-[1.08] text-slate font-medium tracking-tight text-balance mb-8"
+            className="font-serif text-[2.25rem] md:text-5xl lg:text-[4.5rem] xl:text-[5.5rem] leading-[1.02] text-slate font-medium tracking-tight text-balance mb-10"
           >
             {title}
           </motion.h1>
@@ -102,7 +102,7 @@ export default function ArticleHero({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, ease: VANGUARD_EASE, delay: 0.5 }}
-              className="font-serif text-xl md:text-2xl text-slate/70 italic leading-[1.5] max-w-2xl"
+              className="font-serif text-xl md:text-2xl lg:text-[1.625rem] text-slate/70 italic leading-[1.5] max-w-3xl"
             >
               {excerpt}
             </motion.p>

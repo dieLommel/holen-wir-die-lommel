@@ -1,11 +1,13 @@
 "use client";
 
+import { Children, isValidElement, ReactNode } from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { motion, useReducedMotion } from "framer-motion";
 import NumberedSectionHeading from "./NumberedSectionHeading";
+import NumberedOptionCard from "./NumberedOptionCard";
 
 interface Props {
   content: string;
@@ -14,14 +16,21 @@ interface Props {
 const VANGUARD_EASE = [0.32, 0.72, 0, 1] as const;
 
 /**
- * Pattern, das nummerierte Sections erkennt:
+ * Pattern, das nummerierte H2-Sections erkennt:
  * - "Frühwarnzeichen 3 — Loyalität blockiert Klarheit"
  * - "Falle 2: Die Beratungs-Brücke"
- * - "Option 4 — Schließung mit Würde"
- * - "Schritt 1 (heute, 60 Minuten)"
  */
 const NUMBERED_PATTERN =
   /^(Frühwarnzeichen|Falle|Option|Schritt|Phase|Hebel|Welle|Kipppunkt|Frage|Welle)\s+(\d+)\s*[—–\-:]\s*(.+)$/;
+
+/**
+ * Pattern, das **Inline-Cards** in <p>-Strong-Start erkennt:
+ * - **Option 1: Externe Geschäftsführung, familiäre Eigentümerschaft.** Du behältst...
+ * - **Falle 2: Die Beratungs-Brücke.** Der Senior...
+ * - **Schritt 1 (heute, 60 Minuten):** Setz dich allein hin...
+ */
+const INLINE_NUMBERED_PATTERN =
+  /^(Option|Falle|Schritt|Fehler|Kipppunkt|Wahrheit|Methode|Hebel|Phase|Frage)\s+(\d+)\s*(?:\([^)]*\))?\s*[:.—–-]\s*(.+?)\.?\s*$/;
 
 function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const reduce = useReducedMotion();
@@ -76,11 +85,44 @@ export default function ArticleBody({ content }: Props) {
               {children}
             </h3>
           ),
-          p: ({ children }) => (
-            <p className="font-sans text-[17px] lg:text-[18px] text-slate/80 leading-[1.85] mb-6 max-w-[68ch]">
-              {children}
-            </p>
-          ),
+          p: ({ children }) => {
+            // Pattern-Detect: Erstes Child ist <strong>, dessen Text matched
+            // "Option 1: Title." | "Falle 2: Title." | "Schritt 3 (heute):" etc.
+            const arr = Children.toArray(children);
+            const first = arr[0];
+            if (isValidElement(first) && first.type === "strong") {
+              const strongChildren = (first.props as { children?: ReactNode }).children;
+              const strongText = String(
+                Array.isArray(strongChildren)
+                  ? strongChildren.map((c) => (typeof c === "string" ? c : "")).join("")
+                  : strongChildren ?? ""
+              ).trim();
+              const match = strongText.match(INLINE_NUMBERED_PATTERN);
+              if (match) {
+                // Body = restliche Children nach dem <strong>
+                const rest = arr.slice(1).map((node, i) => {
+                  if (typeof node === "string") {
+                    // führendes Leerzeichen/Punkt entfernen
+                    return <span key={i}>{node.replace(/^[\s.]+/, "")}</span>;
+                  }
+                  return <span key={i}>{node}</span>;
+                });
+                return (
+                  <NumberedOptionCard
+                    number={match[2]}
+                    category={match[1]}
+                    title={match[3].replace(/\.$/, "")}
+                    body={rest}
+                  />
+                );
+              }
+            }
+            return (
+              <p className="font-sans text-[17px] lg:text-[18px] text-slate/80 leading-[1.85] mb-6 max-w-[68ch]">
+                {children}
+              </p>
+            );
+          },
           strong: ({ children }) => (
             <strong className="text-slate font-semibold">{children}</strong>
           ),
