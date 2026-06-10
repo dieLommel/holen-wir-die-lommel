@@ -218,8 +218,8 @@ export function ArticleCta() {
         className="absolute top-0 right-0 w-64 h-64 bg-[#C27347]/8 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"
       />
       <div className="relative p-10 lg:p-16">
-        <div className="font-serif italic text-[#D69970] text-lg mb-5 flex items-center gap-3">
-          <span className="block w-8 h-[1px] bg-[#D69970]/50" />
+        <div className="font-serif italic text-[#C27347] text-lg mb-5 flex items-center gap-3">
+          <span className="block w-8 h-[1px] bg-[#C27347]/50" />
           Der nächste Schritt
         </div>
         <h3 className="font-serif text-3xl md:text-4xl lg:text-[2.75rem] leading-[1.1] text-canvas font-medium mb-6 tracking-tight">

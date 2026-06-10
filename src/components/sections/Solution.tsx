@@ -1,8 +1,52 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { GoldenRockScene } from "@/components/ui/GoldenRock3D";
+import dynamic from "next/dynamic";
+
+// Lazy-load the 3D scene + its three.js bundle only when this section approaches the viewport.
+// Saves ~500KB JS + the 7MB GLB from the initial page load.
+const GoldenRockScene = dynamic(
+  () => import("@/components/ui/GoldenRock3D").then((m) => m.GoldenRockScene),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-full h-[400px] lg:h-[600px] flex items-center justify-center">
+        <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#C27347]/30 to-[#C27347]/10 blur-2xl" />
+      </div>
+    ),
+  }
+);
+
+function LazyRockMount() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [shouldMount, setShouldMount] = useState(false);
+
+  useEffect(() => {
+    if (!ref.current || shouldMount) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setShouldMount(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "200px 0px" }
+    );
+    io.observe(ref.current);
+    return () => io.disconnect();
+  }, [shouldMount]);
+
+  // Wrapper keeps the layout slot reserved at the scene's eventual height so the
+  // IntersectionObserver has a real bounding box to track and the page doesn't
+  // jump when the 3D scene mounts.
+  return (
+    <div ref={ref} className="w-full h-[400px] lg:h-[600px] flex items-center justify-center">
+      {shouldMount && <GoldenRockScene />}
+    </div>
+  );
+}
 
 const VANGUARD_EASE = [0.32, 0.72, 0, 1] as const;
 
@@ -33,16 +77,16 @@ export default function Solution() {
         {/* Centered Headline Block */}
         <div className="w-full max-w-5xl flex flex-col items-center text-center mb-20 lg:mb-28 mix-blend-multiply">
           <div className="flex items-center justify-center gap-4 mb-8">
-            <div className="h-[1px] w-6 lg:w-10 bg-gradient-to-l from-[#A85E3A]/40 to-transparent"></div>
-            <div className="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-[#A85E3A] to-slate/80 text-lg md:text-xl tracking-wider">
+            <div className="h-[1px] w-6 lg:w-10 bg-gradient-to-l from-[#C27347]/40 to-transparent"></div>
+            <div className="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-[#C27347] to-slate/80 text-lg md:text-xl tracking-wider">
               Die Systemische Methode
             </div>
-            <div className="h-[1px] w-6 lg:w-10 bg-gradient-to-r from-[#A85E3A]/40 to-transparent"></div>
+            <div className="h-[1px] w-6 lg:w-10 bg-gradient-to-r from-[#C27347]/40 to-transparent"></div>
           </div>
           
           <h2 className="font-serif text-5xl md:text-6xl lg:text-[4.75rem] xl:text-[5.25rem] leading-[1.05] text-slate tracking-tight">
             Echtes Handwerk am System.<br />
-            <span className="italic text-[#A85E3A] font-normal mt-3 inline-block">Präzision statt Standard.</span>
+            <span className="italic text-[#C27347] font-normal mt-3 inline-block">Präzision statt Standard.</span>
           </h2>
         </div>
 
@@ -76,7 +120,7 @@ export default function Solution() {
           {/* Right Column: 3D Rock (desktop) / static image (mobile) */}
           <div className="w-full flex items-center justify-center pointer-events-auto">
             <div className="hidden lg:flex w-full items-center justify-center">
-              <GoldenRockScene />
+              <LazyRockMount />
             </div>
             <div className="lg:hidden w-full max-w-sm flex flex-col gap-6 items-center text-center">
               <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-lg border border-slate/5">

@@ -9,14 +9,14 @@
   --color-canvas: #FAF8F4; /* Creme / Ivory */
   --color-surface: #FFFFFF; /* Pure White */
   --color-slate: #1A1A18; /* Deep Anthracite */
-  --color-mint: #A58861; /* Refined Gold/Brass */
+  --color-mint: #C27347; /* Terracotta Accent (single brand accent) */
   --color-coral: #8C7355; /* Deep Bronze */
   
   /* Legacy mappings (to not break sections yet) */
   --color-onyx: #1A1A18; 
   --color-pearl: #FFFFFF;
   --color-beige: #FAF8F4;
-  --color-accent: #A58861;
+  --color-accent: #C27347;
   --color-earth: #8C7355;
 }
 

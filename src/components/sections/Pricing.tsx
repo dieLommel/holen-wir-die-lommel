@@ -1,8 +1,48 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+
+// Defer the 8.5MB background video until the section is approaching the viewport.
+function LazyBackgroundVideo() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [src, setSrc] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!ref.current || src) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setSrc("/videos/see-background.mp4");
+          io.disconnect();
+        }
+      },
+      { rootMargin: "400px 0px" }
+    );
+    io.observe(ref.current);
+    return () => io.disconnect();
+  }, [src]);
+
+  return (
+    <div ref={ref} className="absolute inset-0 z-0">
+      {src && (
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          className="absolute inset-0 w-full h-full object-cover opacity-70"
+        >
+          <source src={src} type="video/mp4" />
+        </video>
+      )}
+      <div className="absolute inset-0 bg-gradient-to-b from-canvas/80 via-transparent to-canvas/80" />
+    </div>
+  );
+}
 
 const VANGUARD_EASE = [0.32, 0.72, 0, 1] as const;
 
@@ -23,19 +63,8 @@ export default function Pricing() {
   return (
     <section id="angebote" className="px-[5%] py-32 lg:py-56 bg-canvas border-b border-t border-slate/10 relative overflow-hidden">
 
-      {/* Lake Background Video - Clearly Visible */}
-      <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-70"
-        >
-          <source src="/videos/see-background.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-canvas/80 via-transparent to-canvas/80"></div>
-      </div>
+      {/* Lake Background Video - lazy-mounted when section approaches viewport */}
+      <LazyBackgroundVideo />
 
       <div className="container mx-auto max-w-7xl relative z-10">
         <motion.div
@@ -51,7 +80,7 @@ export default function Pricing() {
             <div className="w-8 h-[1px] bg-[#C27347]/40"></div>
           </div>
           <h2 className="mb-8 text-5xl font-serif leading-[1.05] text-slate md:text-6xl lg:text-[5rem] tracking-tight">
-            Der nächste <span className="font-script text-[#A85E3A] text-[5rem] md:text-[6.5rem] leading-[0.6] inline-block -rotate-2 mt-4">Schritt</span>
+            Der nächste <span className="font-script text-[#C27347] text-[5rem] md:text-[6.5rem] leading-[0.6] inline-block -rotate-2 mt-4">Schritt</span>
           </h2>
           <p className="md:text-xl font-sans text-slate/75 leading-relaxed font-light mt-8">
             Jede Situation ist einzigartig. Deshalb fangen wir immer mit radikaler Klarheit an.
@@ -102,8 +131,8 @@ export default function Pricing() {
           </motion.div>
 
           {/* Card 2 - Highlighted */}
-          <motion.div variants={cardVariants} className="bg-surface border border-slate flex flex-col p-8 lg:p-12 relative z-10 shadow-[0_10px_40px_-15px_rgba(165,136,97,0.15)] transform lg:-translate-y-4">
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#C27347] to-[#A85E3A]"></div>
+          <motion.div variants={cardVariants} className="bg-surface border border-slate flex flex-col p-8 lg:p-12 relative z-10 shadow-[0_10px_40px_-15px_rgba(194,115,71,0.15)] transform lg:-translate-y-4">
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#C27347] to-[#C27347]"></div>
             <div className="absolute top-4 right-4 bg-[#C27347]/10 px-3 py-1.5 text-[10px] font-sans font-semibold uppercase tracking-widest text-[#C27347]">
               Akut-Empfehlung
             </div>
@@ -142,7 +171,7 @@ export default function Pricing() {
               href="https://zeeg.me/info8723/90"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-auto w-full rounded-full bg-[#C27347] border border-transparent px-6 py-4 flex items-center justify-between text-xs font-sans font-semibold uppercase tracking-widest text-white transition-all hover:bg-[#A85E3A] shadow-[0px_4px_14px_0px_rgba(194,115,71,0.3)] hover:shadow-[0px_6px_20px_0px_rgba(194,115,71,0.4)]"
+              className="mt-auto w-full rounded-full bg-[#C27347] border border-transparent px-6 py-4 flex items-center justify-between text-xs font-sans font-semibold uppercase tracking-widest text-white transition-all hover:bg-[#C27347] shadow-[0px_4px_14px_0px_rgba(194,115,71,0.3)] hover:shadow-[0px_6px_20px_0px_rgba(194,115,71,0.4)]"
             >
               <span>Jetzt buchen</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>

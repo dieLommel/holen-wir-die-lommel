@@ -59,7 +59,7 @@ export default function Process() {
             </div>
             <h2 className="text-5xl font-serif text-slate leading-[1.05] md:text-6xl lg:text-[5rem] tracking-tight text-balance">
               Ab in die Ruhe.<br />
-              <span className="font-script text-[#A85E3A] text-[4.5rem] md:text-[6rem] lg:text-[7rem] leading-[0.7] mt-8 -rotate-2 inline-block">In drei Schritten.</span>
+              <span className="font-script text-[#C27347] text-[4.5rem] md:text-[6rem] lg:text-[7rem] leading-[0.7] mt-8 -rotate-2 inline-block">In drei Schritten.</span>
             </h2>
           </motion.div>
           
@@ -83,7 +83,7 @@ export default function Process() {
                 </span>
 
                 {/* Flat Premium Print Card */}
-                <div className="w-full h-full bg-surface/95 backdrop-blur-sm border border-slate/10 p-10 lg:p-12 flex flex-col items-start relative overflow-hidden transition-all duration-700 hover:border-[#C27347]/40 hover:shadow-[0_20px_40px_-15px_rgba(165,136,97,0.1)] hover:-translate-y-2 z-10">
+                <div className="w-full h-full bg-surface/95 backdrop-blur-sm border border-slate/10 p-10 lg:p-12 flex flex-col items-start relative overflow-hidden transition-all duration-700 hover:border-[#C27347]/40 hover:shadow-[0_20px_40px_-15px_rgba(194,115,71,0.1)] hover:-translate-y-2 z-10">
                   
                   <div className="h-[1px] w-12 bg-gradient-to-r from-[#C27347] to-transparent mb-10 transition-all duration-500 group-hover:w-24"></div>
                   

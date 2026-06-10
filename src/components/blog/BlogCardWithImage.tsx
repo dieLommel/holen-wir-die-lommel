@@ -42,7 +42,7 @@ export default function BlogCardWithImage({ post, index = 0 }: Props) {
 
         {/* Card-Body — kein Card-Background, editorial-clean */}
         <div className="flex flex-col flex-grow">
-          <h2 className="font-serif text-2xl lg:text-[1.875rem] leading-[1.15] text-slate font-medium mb-4 tracking-tight group-hover:text-[#A85E3A] transition-colors duration-500">
+          <h2 className="font-serif text-2xl lg:text-[1.875rem] leading-[1.15] text-slate font-medium mb-4 tracking-tight group-hover:text-[#C27347] transition-colors duration-500">
             {post.frontmatter.title}
           </h2>
 

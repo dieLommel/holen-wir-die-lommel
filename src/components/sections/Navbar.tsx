@@ -61,7 +61,7 @@ export default function Navbar() {
             href="https://zeeg.me/info8723/15"
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-4 rounded-full bg-[#C27347] pl-6 pr-2 py-2.5 flex items-center gap-4 text-[10px] font-sans font-semibold uppercase tracking-[0.2em] text-white transition-all hover:bg-[#A85E3A] hover:shadow-[0_4px_16px_rgba(194,115,71,0.3)] group"
+            className="ml-4 rounded-full bg-[#C27347] pl-6 pr-2 py-2.5 flex items-center gap-4 text-[10px] font-sans font-semibold uppercase tracking-[0.2em] text-white transition-all hover:bg-[#C27347] hover:shadow-[0_4px_16px_rgba(194,115,71,0.3)] group"
           >
             <span>15 Min. Telefonat</span>
             <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center transition-transform group-hover:bg-white/30">

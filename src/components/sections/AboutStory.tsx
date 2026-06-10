@@ -25,7 +25,7 @@ export default function AboutStory() {
           </div>
           <h2 className="text-4xl md:text-5xl font-serif leading-[1.05] text-slate tracking-tight text-balance">
             "Wenn keiner weiß, wer es machen kann,<br />
-            <span className="font-script text-[#A85E3A] text-[3.5rem] md:text-[5rem] leading-[0.8] mt-4 inline-block">dann holen wir mal die Lommel."</span>
+            <span className="font-script text-[#C27347] text-[3.5rem] md:text-[5rem] leading-[0.8] mt-4 inline-block">dann holen wir mal die Lommel."</span>
           </h2>
         </motion.div>
 
@@ -48,7 +48,7 @@ export default function AboutStory() {
               
               <h2 className="mb-12 text-5xl font-serif leading-[1.05] text-slate md:text-6xl lg:text-[4.2rem] xl:text-[4.8rem] tracking-tight text-balance">
                 "Wenn keiner weiß, wer es machen kann,<br />
-                <span className="font-script text-[#A85E3A] text-[3.5rem] md:text-[5rem] lg:text-[5.5rem] leading-[0.8] mt-6 inline-block">dann holen wir mal die Lommel."</span>
+                <span className="font-script text-[#C27347] text-[3.5rem] md:text-[5rem] lg:text-[5.5rem] leading-[0.8] mt-6 inline-block">dann holen wir mal die Lommel."</span>
               </h2>
             </div>
             

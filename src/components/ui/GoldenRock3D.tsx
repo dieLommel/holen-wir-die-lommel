@@ -5,9 +5,11 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { useGLTF, Environment, Float, ContactShadows } from "@react-three/drei";
 import * as THREE from "three";
 
+const MODEL_PATH = "/models/gold-rock-compressed.glb";
+
 export function GoldenRockModel(props: any) {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { nodes, materials } = useGLTF("/models/gold-rock.glb") as any;
+  const { nodes, materials } = useGLTF(MODEL_PATH) as any;
   const modelRef = useRef<THREE.Group>(null);
 
   useFrame((state, delta) => {
@@ -32,12 +34,14 @@ export function GoldenRockModel(props: any) {
 
   return (
     <group ref={modelRef} {...props} dispose={null}>
-      <primitive object={useGLTF("/models/gold-rock.glb").scene} />
+      <primitive object={useGLTF(MODEL_PATH).scene} />
     </group>
   );
 }
 
-useGLTF.preload("/models/gold-rock.glb");
+// Preload removed — was kicking off the 44MB download at module-import time, before
+// the user ever scrolled near this section. The compressed model now loads lazily
+// when Solution.tsx mounts GoldenRockScene via next/dynamic.
 
 function MouseLight() {
   const lightRef = useRef<THREE.PointLight>(null);

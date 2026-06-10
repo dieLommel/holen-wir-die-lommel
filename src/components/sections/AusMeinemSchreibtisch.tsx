@@ -86,7 +86,7 @@ export default function AusMeinemSchreibtisch() {
                   </span>
                 </div>
 
-                <h3 className="font-serif text-2xl lg:text-[1.75rem] text-slate leading-[1.2] mb-4 group-hover:text-[#A85E3A] transition-colors duration-500">
+                <h3 className="font-serif text-2xl lg:text-[1.75rem] text-slate leading-[1.2] mb-4 group-hover:text-[#C27347] transition-colors duration-500">
                   {post.title}
                 </h3>
 

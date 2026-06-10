@@ -38,7 +38,7 @@ export default function Identification() {
           
           <motion.h2 variants={itemVariants} className="font-serif text-5xl md:text-6xl lg:text-[5rem] text-slate mb-12 leading-[1.05] tracking-tight">
             Wer ist der Mensch auf dem Bild? <br className="hidden md:block" />
-            <span className="font-script text-[#A85E3A] text-6xl md:text-[6.5rem] lg:text-[8rem] mt-8 inline-block -rotate-2 leading-[0.7]">Das bist vielleicht du.</span>
+            <span className="font-script text-[#C27347] text-6xl md:text-[6.5rem] lg:text-[8rem] mt-8 inline-block -rotate-2 leading-[0.7]">Das bist vielleicht du.</span>
           </motion.h2>
           
           <motion.div variants={itemVariants} className="h-px w-24 bg-gradient-to-r from-transparent via-slate/20 to-transparent mx-auto mb-14" />

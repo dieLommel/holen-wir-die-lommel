@@ -39,11 +39,11 @@ export default function WandelbegleitungDefinition() {
           className="text-center mb-20 lg:mb-28"
         >
           <div className="flex items-center justify-center gap-4 mb-8">
-            <div className="h-[1px] w-6 lg:w-10 bg-gradient-to-l from-[#A85E3A]/40 to-transparent" />
-            <div className="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-[#A85E3A] to-slate/80 text-lg md:text-xl tracking-wider">
+            <div className="h-[1px] w-6 lg:w-10 bg-gradient-to-l from-[#C27347]/40 to-transparent" />
+            <div className="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-[#C27347] to-slate/80 text-lg md:text-xl tracking-wider">
               Klärung der Kategorie
             </div>
-            <div className="h-[1px] w-6 lg:w-10 bg-gradient-to-r from-[#A85E3A]/40 to-transparent" />
+            <div className="h-[1px] w-6 lg:w-10 bg-gradient-to-r from-[#C27347]/40 to-transparent" />
           </div>
 
           <h2
@@ -52,7 +52,7 @@ export default function WandelbegleitungDefinition() {
           >
             Was ist Wandelbegleitung?
             <br />
-            <span className="italic text-[#A85E3A] font-normal">Und was sie nicht ist.</span>
+            <span className="italic text-[#C27347] font-normal">Und was sie nicht ist.</span>
           </h2>
         </motion.div>
 
@@ -114,7 +114,7 @@ export default function WandelbegleitungDefinition() {
           <div className="font-serif italic text-2xl md:text-3xl lg:text-[2rem] leading-[1.5] text-slate">
             Wenn Verantwortung schwer wird, Klarheit fehlt und Wandel spürbar näher rückt:
             <br />
-            <span className="text-[#A85E3A]">wird die Lommel geholt.</span>
+            <span className="text-[#C27347]">wird die Lommel geholt.</span>
           </div>
         </motion.div>
       </div>

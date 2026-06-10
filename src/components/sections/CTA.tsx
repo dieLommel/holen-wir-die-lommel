@@ -29,7 +29,7 @@ export default function CTA() {
             
             <h2 className="mb-14 text-5xl font-serif text-slate md:text-6xl lg:text-[4.8rem] leading-[1.05] tracking-tight text-balance">
               Wollen wir den Nebel lichten?<br />
-              <span className="font-script text-[#A85E3A] text-6xl md:text-[6rem] lg:text-[7rem] inline-block -rotate-2 mt-8 leading-[0.7]">Dann sprich mit mir.</span>
+              <span className="font-script text-[#C27347] text-6xl md:text-[6rem] lg:text-[7rem] inline-block -rotate-2 mt-8 leading-[0.7]">Dann sprich mit mir.</span>
             </h2>
             
             <div className="mb-16 flex flex-col gap-8 max-w-lg mt-4">
@@ -74,7 +74,7 @@ export default function CTA() {
           >
             <div className="w-full relative">
               {/* Gold Top Accent Line */}
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#C27347] to-[#A85E3A] z-20"></div>
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#C27347] to-[#C27347] z-20"></div>
               
               {/* Inner Core */}
               <div className="relative w-full border border-slate/5 bg-surface/80 backdrop-blur-sm p-8 sm:p-14 overflow-hidden shadow-[0_20px_60px_-15px_rgba(26,26,24,0.05)]">
@@ -108,7 +108,7 @@ export default function CTA() {
                     href="https://zeeg.me/info8723/15"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full rounded-none bg-[#C27347] px-6 py-4 flex items-center justify-between text-xs font-sans font-semibold uppercase tracking-[0.2em] text-white transition-all duration-500 hover:bg-[#A85E3A] hover:shadow-[0_0_24px_rgba(194,115,71,0.25)] group"
+                    className="w-full rounded-none bg-[#C27347] px-6 py-4 flex items-center justify-between text-xs font-sans font-semibold uppercase tracking-[0.2em] text-white transition-all duration-500 hover:bg-[#C27347] hover:shadow-[0_0_24px_rgba(194,115,71,0.25)] group"
                   >
                     <span>15 Min. Telefonat buchen</span>
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-500 group-hover:translate-x-1"><path d="M5 12h14M12 5l7 7-7 7"/></svg>

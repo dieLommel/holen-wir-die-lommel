@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Designguide · Holen wir die Lommel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Caveat:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --canvas: #FAF8F4;
+    --surface: #FFFFFF;
+    --slate: #1A1A18;
+    --gold: #A58861;       /* token: --color-mint */
+    --bronze: #8C7355;     /* token: --color-coral */
+    --terracotta: #C27347; /* used in Pricing/Navbar */
+    --terracotta-deep: #A85E3A;
+    --slate-60: rgba(26,26,24,0.6);
+    --slate-40: rgba(26,26,24,0.4);
+    --slate-10: rgba(26,26,24,0.1);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: #ECE7DE;
+    font-family: 'Inter', sans-serif;
+    color: var(--slate);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .slide-wrap {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .slide {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 24px 60px -20px rgba(26,26,24,0.18);
+  }
+
+  /* SLIDE 1 — LIGHT */
+  .slide.light {
+    background: var(--canvas);
+    color: var(--slate);
+    padding: 56px 64px;
+    display: grid;
+    grid-template-rows: auto 1fr 1fr;
+    gap: 36px;
+  }
+
+  /* SLIDE 2 — DARK */
+  .slide.dark {
+    background: var(--slate);
+    color: var(--canvas);
+    padding: 56px 64px;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 36px;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 1px solid var(--slate-10);
+    padding-bottom: 18px;
+  }
+  .slide.dark .header { border-bottom: 1px solid rgba(250,248,244,0.12); }
+
+  .brand-mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .header-meta {
+    display: flex;
+    gap: 32px;
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-weight: 500;
+  }
+  .header-meta span { opacity: 0.55; }
+  .slide.light .page-num { color: var(--terracotta); opacity: 1; font-weight: 600; }
+  .slide.dark .page-num { color: var(--gold); opacity: 1; font-weight: 600; }
+
+  /* Section title */
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--slate-60);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-title::before {
+    content: '';
+    width: 24px; height: 1px;
+    background: var(--terracotta);
+  }
+  .slide.dark .section-title { color: rgba(250,248,244,0.55); }
+  .slide.dark .section-title::before { background: var(--gold); }
+
+  /* Color grid */
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 14px;
+  }
+  .swatch {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .chip {
+    aspect-ratio: 1 / 1.05;
+    border-radius: 2px;
+    border: 1px solid var(--slate-10);
+    position: relative;
+  }
+  .chip-canvas { background: var(--canvas); }
+  .chip-surface { background: var(--surface); }
+  .chip-slate { background: var(--slate); }
+  .chip-gold { background: var(--gold); border-color: transparent; }
+  .chip-bronze { background: var(--bronze); border-color: transparent; }
+  .chip-terracotta { background: var(--terracotta); border-color: transparent; }
+  .chip-terracotta-deep { background: var(--terracotta-deep); border-color: transparent; }
+
+  .swatch-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .swatch-hex {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--slate-60);
+    font-weight: 500;
+  }
+  .swatch-role {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    color: var(--slate-60);
+    line-height: 1.4;
+  }
+
+  /* Typography */
+  .type-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+  }
+  .type-block {
+    padding-right: 24px;
+    border-right: 1px solid var(--slate-10);
+  }
+  .type-block:last-child { border-right: none; }
+  .type-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--slate-60);
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  .type-name {
+    font-size: 24px;
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+  .type-name.serif { font-family: 'Cormorant Garamond', serif; font-size: 32px; }
+  .type-name.sans  { font-family: 'Inter', sans-serif; font-size: 26px; }
+  .type-name.script { font-family: 'Caveat', cursive; font-size: 36px; color: var(--terracotta); transform: rotate(-2deg); display: inline-block; }
+  .type-meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--slate-40);
+    margin-bottom: 10px;
+  }
+  .type-purpose {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    line-height: 1.5;
+    color: var(--slate);
+    opacity: 0.8;
+  }
+
+  /* SLIDE 2 layout */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 56px;
+  }
+
+  /* Buttons */
+  .btn-row {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 10px;
+    border-radius: 999px;
+    padding: 10px 8px 10px 24px;
+    width: fit-content;
+  }
+  .btn-icon {
+    width: 28px; height: 28px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  .btn-primary {
+    background: var(--terracotta);
+    color: white;
+    box-shadow: 0 4px 14px rgba(194,115,71,0.3);
+  }
+  .btn-primary .btn-icon { background: rgba(255,255,255,0.2); color: white; }
+
+  .btn-hero {
+    background: var(--surface);
+    color: var(--slate);
+    box-shadow: 0 24px 60px -20px rgba(255,255,255,0.2);
+  }
+  .btn-hero .btn-icon { background: rgba(0,0,0,0.08); color: var(--slate); border: 1px solid rgba(0,0,0,0.05); }
+
+  .btn-tertiary {
+    background: transparent;
+    color: var(--canvas);
+    border-bottom: 1px solid rgba(250,248,244,0.3);
+    border-radius: 0;
+    padding: 0 0 6px 0;
+    letter-spacing: 0.2em;
+  }
+  .slide.light .btn-tertiary { color: var(--slate); border-bottom-color: var(--slate-40); }
+
+  .btn-caption {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: rgba(250,248,244,0.5);
+    margin-top: 2px;
+  }
+  .slide.light .btn-caption { color: var(--slate-40); }
+
+  /* Type hierarchy block */
+  .hierarchy {
+    border-left: 1px solid rgba(250,248,244,0.12);
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .h-eyebrow {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--gold);
+  }
+  .h-h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+  }
+  .h-h1 em {
+    font-style: italic;
+    color: rgba(250,248,244,0.6);
+    font-weight: 300;
+  }
+  .h-h1 .accent {
+    font-family: 'Caveat', cursive;
+    font-style: normal;
+    color: var(--gold);
+    font-size: 1.2em;
+    font-weight: 500;
+    display: inline-block;
+    transform: rotate(-2deg);
+    line-height: 0.7;
+  }
+  .h-body {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    line-height: 1.7;
+    color: rgba(250,248,244,0.7);
+    font-weight: 300;
+    max-width: 90%;
+  }
+  .h-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: rgba(250,248,244,0.4);
+    font-weight: 500;
+  }
+
+  /* Do & Don't */
+  .rules-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .rule-list h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+  .rule-list.do h4 { color: var(--gold); }
+  .rule-list.dont h4 { color: var(--terracotta); }
+  .rule-list ul { list-style: none; }
+  .rule-list li {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    line-height: 1.6;
+    color: rgba(250,248,244,0.75);
+    padding-left: 14px;
+    position: relative;
+    margin-bottom: 7px;
+    font-weight: 300;
+  }
+  .rule-list li::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .rule-list.do li::before { content: '+'; color: var(--gold); font-weight: 600; }
+  .rule-list.dont li::before { content: '−'; color: var(--terracotta); font-weight: 600; }
+
+  /* Spacing system */
+  .spacing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+  }
+  .spacing-item {
+    border: 1px solid rgba(250,248,244,0.12);
+    padding: 12px 14px;
+    border-radius: 2px;
+  }
+  .spacing-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--canvas);
+    margin-bottom: 4px;
+  }
+  .spacing-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: rgba(250,248,244,0.5);
+    font-weight: 500;
+  }
+  .spacing-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    color: rgba(250,248,244,0.7);
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+
+  /* Tone of voice */
+  .tone-block {
+    margin-top: 8px;
+  }
+  .tone-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--gold);
+    line-height: 1.4;
+    margin-bottom: 10px;
+    border-left: 2px solid var(--gold);
+    padding-left: 14px;
+  }
+  .tone-meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    line-height: 1.6;
+    color: rgba(250,248,244,0.7);
+    font-weight: 300;
+  }
+  .tone-meta strong { color: var(--canvas); font-weight: 500; }
+
+  /* PDF Button */
+  .pdf-btn {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    background: var(--slate);
+    color: var(--canvas);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 999px;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(26,26,24,0.25);
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+  .pdf-btn:hover { background: var(--terracotta); transform: translateY(-2px); }
+
+  /* PRINT */
+  @media print {
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    html, body { background: white; }
+    .pdf-btn { display: none; }
+    .slide-wrap {
+      padding: 0;
+      gap: 0;
+      max-width: none;
+    }
+    .slide {
+      width: 100vw;
+      height: 56.25vw;
+      aspect-ratio: 16 / 9;
+      page-break-after: always;
+      border-radius: 0;
+      box-shadow: none;
+    }
+    .slide:last-child { page-break-after: auto; }
+    @page {
+      size: A4 landscape;
+      margin: 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<button class="pdf-btn" onclick="window.print()">↓ Als PDF speichern</button>
+
+<div class="slide-wrap">
+
+  <!-- ============== SLIDE 1 — FARBEN & TYPOGRAPHIE ============== -->
+  <section class="slide light">
+
+    <div class="header">
+      <div class="brand-mark">Holen wir die Lommel.</div>
+      <div class="header-meta">
+        <span>Design Reference Sheet · V1.0 · 2026</span>
+        <span class="page-num">01 / Farben & Typographie</span>
+      </div>
+    </div>
+
+    <!-- COLORS -->
+    <div>
+      <div class="section-title">Farbpalette · Heritage Editorial</div>
+
+      <div class="color-grid">
+        <div class="swatch">
+          <div class="chip chip-canvas"></div>
+          <div class="swatch-name">Canvas</div>
+          <div class="swatch-hex">#FAF8F4</div>
+          <div class="swatch-role">Body, Sections, Hintergrund</div>
+        </div>
+        <div class="swatch">
+          <div class="chip chip-surface"></div>
+          <div class="swatch-name">Surface</div>
+          <div class="swatch-hex">#FFFFFF</div>
+          <div class="swatch-role">Cards, Navbar (scrolled)</div>
+        </div>
+        <div class="swatch">
+          <div class="chip chip-slate"></div>
+          <div class="swatch-name">Slate</div>
+          <div class="swatch-hex">#1A1A18</div>
+          <div class="swatch-role">Text, Headlines, dunkle Sektionen</div>
+        </div>
+        <div class="swatch">
+          <div class="chip chip-gold"></div>
+          <div class="swatch-name">Gold/Brass</div>
+          <div class="swatch-hex">#A58861</div>
+          <div class="swatch-role">Akzent · Token: <code>--color-mint</code></div>
+        </div>
+        <div class="swatch">
+          <div class="chip chip-bronze"></div>
+          <div class="swatch-name">Bronze</div>
+          <div class="swatch-hex">#8C7355</div>
+          <div class="swatch-role">Tiefe · Token: <code>--color-coral</code></div>
+        </div>
+        <div class="swatch">
+          <div class="chip chip-terracotta"></div>
+          <div class="swatch-name">Terrakotta</div>
+          <div class="swatch-hex">#C27347</div>
+          <div class="swatch-role">Primäre CTA, Akzent-Linien</div>
+        </div>
+        <div class="swatch">
+          <div class="chip chip-terracotta-deep"></div>
+          <div class="swatch-name">Tiefbronze</div>
+          <div class="swatch-hex">#A85E3A</div>
+          <div class="swatch-role">CTA-Hover, Tiefenakzent</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TYPOGRAPHY -->
+    <div>
+      <div class="section-title">Schriften · Drei-Familien-System</div>
+
+      <div class="type-grid">
+        <div class="type-block">
+          <div class="type-label">Headlines · Editorial</div>
+          <div class="type-name serif">Cormorant Garamond</div>
+          <div class="type-meta">300 · 400 · 500 · 600 · 700 · 400 italic</div>
+          <div class="type-purpose">Eleganter Serif mit Fuß und Stabilität. Trägt H1, H2, H3 und narrative Momente. Klassisch, klar, niemals technisch.</div>
+        </div>
+        <div class="type-block">
+          <div class="type-label">Fließtext · Klarheit</div>
+          <div class="type-name sans">Inter</div>
+          <div class="type-meta">300 · 400 · 500 · 600 · 700</div>
+          <div class="type-purpose">Modern, lesbar, neutral. Für Body, Labels, Buttons, Captions. Minimal-Tracking für Schwere, weites Tracking für Eyebrows.</div>
+        </div>
+        <div class="type-block">
+          <div class="type-label">Akzent · Persönlich</div>
+          <div class="type-name script">Schritt</div>
+          <div class="type-meta">Caveat · 500 · sparsam, gezielt</div>
+          <div class="type-purpose">Handschriftlicher Akzent — nur als emotionale Pointe. Niemals für Fließtext oder Buttons. Immer mit −2° Rotation.</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ============== SLIDE 2 — KOMPONENTEN & REGELN ============== -->
+  <section class="slide dark">
+
+    <div class="header">
+      <div class="brand-mark" style="color: var(--canvas);">Holen wir die Lommel.</div>
+      <div class="header-meta">
+        <span style="color: rgba(250,248,244,0.55);">Design Reference Sheet · V1.0 · 2026</span>
+        <span class="page-num">02 / Komponenten & Regeln</span>
+      </div>
+    </div>
+
+    <div class="two-col">
+
+      <!-- LEFT: Buttons + Hierarchy -->
+      <div>
+        <div class="section-title">Buttons · drei Hierarchien</div>
+
+        <div class="btn-row">
+          <a class="btn btn-primary"><span>15 Min. Telefonat</span><span class="btn-icon">↗</span></a>
+          <div class="btn-caption">Primary · Terrakotta-Pill mit Schatten — für Haupt-CTAs (Buchen, Anfragen)</div>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn-hero"><span>Akut: 15 Min. Telefonat</span><span class="btn-icon">↗</span></a>
+          <div class="btn-caption">Hero · Weiße Pill mit nested Icon — nur im Hero auf dunklem Hintergrund</div>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn-tertiary">Termin wählen</a>
+          <div class="btn-caption">Tertiary · Underline — leise CTAs, sekundäre Karten</div>
+        </div>
+
+        <div class="section-title" style="margin-top: 4px;">Hierarchie · Live-Beispiel</div>
+        <div class="hierarchy">
+          <div class="h-eyebrow">Handlungsfähigkeit</div>
+          <div class="h-h1">Der nächste <span class="accent">Schritt</span></div>
+          <div class="h-body">Jede Situation ist einzigartig. Deshalb fangen wir immer mit Klarheit an. Kein langes Vorgeplänkel, sondern direkte Begleitung auf Entscheidungsebene.</div>
+          <div class="h-label">90 Minuten · 320 €</div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Do/Don't + Spacing + Tone -->
+      <div>
+        <div class="section-title">Do · Don't · Markenspezifisch</div>
+        <div class="rules-grid">
+          <div class="rule-list do">
+            <h4>+ Do</h4>
+            <ul>
+              <li>Du-Ansprache, direkt, rheinländisch-klar</li>
+              <li>Editorial-Layouts: Asymmetrie, Luft, Linksbündig</li>
+              <li>Cormorant für emotionale Momente — Italic für Stille</li>
+              <li>Caveat-Akzent nur 1× pro Section, immer rotiert</li>
+              <li>Warm-Erden + Dunkelbronze als Akzentfamilie</li>
+              <li>Easing <code>cubic-bezier(0.32,0.72,0,1)</code> für Bewegung</li>
+            </ul>
+          </div>
+          <div class="rule-list dont">
+            <h4>− Don't</h4>
+            <ul>
+              <li>Keine Coaching-Floskeln („Potenzial entfalten", „auf Augenhöhe")</li>
+              <li>Keine Ausrufezeichen in Headlines</li>
+              <li>Keine Emojis in Navigation oder Buttons</li>
+              <li>Kein Glasmorphismus, Neon, Dark-Mode-Default</li>
+              <li>Keine 3-equal-cards — Akut-Karte immer hervorgehoben</li>
+              <li>Niemals Caveat für Fließtext oder Buttons</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section-title">Spacing · 8-Punkt-Grid</div>
+        <div class="spacing-grid">
+          <div class="spacing-item">
+            <div class="spacing-value">5–10%</div>
+            <div class="spacing-label">Horizontal Padding</div>
+            <div class="spacing-desc">Mobil 5%, Desktop bis 10%</div>
+          </div>
+          <div class="spacing-item">
+            <div class="spacing-value">128 / 192</div>
+            <div class="spacing-label">Section Vertical · px</div>
+            <div class="spacing-desc">py-32 / lg:py-48 — niemals enger</div>
+          </div>
+          <div class="spacing-item">
+            <div class="spacing-value">1400 px</div>
+            <div class="spacing-label">Container Max-Width</div>
+            <div class="spacing-desc">max-w-7xl mit mx-auto</div>
+          </div>
+        </div>
+
+        <div class="tone-block">
+          <div class="tone-quote">„Wenn Verantwortung schwer wird, Klarheit fehlt und Wandel spürbar näher rückt — wird die Lommel geholt."</div>
+          <div class="tone-meta">
+            <strong>Tonalität:</strong> Erdig, klar, weit. Direkt ohne kalt. Editorial ohne abgehoben. Wenn die Marke spräche, wäre es eine vertraute Stimme, die das Wesentliche sagt — und dann schweigt.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>

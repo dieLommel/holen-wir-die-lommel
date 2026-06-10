@@ -42,3 +42,5 @@ next-env.d.ts
 
 # Blog article source PNGs (we deploy JPGs only)
 public/images/blog/articles/*.png
+_backup/
+.claude/

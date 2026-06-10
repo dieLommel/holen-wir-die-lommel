@@ -9,13 +9,25 @@ import { ArrowUpRight } from "lucide-react";
 const FRAME_COUNT = 146;
 const FRAME_PREFIX = "ezgif-frame-";
 const FRAME_EXT = ".jpg";
+// First batch loaded sequentially; canvas becomes visible after this many frames.
+const PRIORITY_CHUNK = 24;
+// Show canvas as soon as N frames are ready; rest streams in behind the scenes.
+const REVEAL_THRESHOLD = 12;
+
+function frameSrc(i: number) {
+  return `/sequence/${FRAME_PREFIX}${(i + 1).toString().padStart(3, "0")}${FRAME_EXT}`;
+}
 
 export default function Hero() {
   const containerRef = useRef<HTMLElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  const [images, setImages] = useState<HTMLImageElement[]>([]);
-  const [loaded, setLoaded] = useState(0);
+  // Images live in a ref so each load doesn't trigger a re-render storm.
+  const imagesRef = useRef<HTMLImageElement[]>([]);
+  const loadedCountRef = useRef(0);
+  const readyRef = useRef(false);
+  const [ready, setReady] = useState(false);
+  const [progressPct, setProgressPct] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
@@ -35,95 +47,133 @@ export default function Hero() {
 
   const smoothProgress = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
 
-  // 1. Preload Images
+  // 1. Progressive frame preload — priority chunk first, then background.
   useEffect(() => {
     if (!isMounted || isMobile) return;
 
-    let loadedCount = 0;
-    const loadedImages: HTMLImageElement[] = [];
+    const images: HTMLImageElement[] = new Array(FRAME_COUNT);
+    imagesRef.current = images;
+    let cancelled = false;
+    let lastPctReported = 0;
 
-    for (let i = 1; i <= FRAME_COUNT; i++) {
-      const img = new window.Image();
-      const paddedIndex = i.toString().padStart(3, '0');
-      img.src = `/sequence/${FRAME_PREFIX}${paddedIndex}${FRAME_EXT}`;
-      
-      img.onload = () => {
-        loadedCount++;
-        setLoaded(loadedCount);
-        if (loadedCount === FRAME_COUNT) {
-          setImages(loadedImages);
-        }
-      };
-      
-      // Fallback if image fails, so we don't completely block
-      img.onerror = () => {
-        loadedCount++;
-        setLoaded(loadedCount);
-        if (loadedCount === FRAME_COUNT) {
-          setImages(loadedImages);
-        }
+    const markLoaded = () => {
+      loadedCountRef.current += 1;
+      const count = loadedCountRef.current;
+      // Use a ref to avoid re-running this effect when `ready` flips — that would
+      // reset imagesRef and discard everything already loaded.
+      if (count >= REVEAL_THRESHOLD && !readyRef.current) {
+        readyRef.current = true;
+        setReady(true);
       }
+      // Throttle re-renders: only update progress bar in 2% steps.
+      const pct = Math.round((count / FRAME_COUNT) * 100);
+      if (pct - lastPctReported >= 2 || count === FRAME_COUNT) {
+        lastPctReported = pct;
+        setProgressPct(pct);
+      }
+    };
 
-      loadedImages.push(img);
-    }
+    const loadOne = (i: number) =>
+      new Promise<void>((resolve) => {
+        const img = new window.Image();
+        img.decoding = "async";
+        img.src = frameSrc(i);
+        const done = () => {
+          if (cancelled) return resolve();
+          images[i] = img;
+          markLoaded();
+          resolve();
+        };
+        img.onload = done;
+        img.onerror = done;
+      });
+
+    // Priority pass: load first chunk sequentially so the canvas reveals fast.
+    (async () => {
+      const priorityEnd = Math.min(PRIORITY_CHUNK, FRAME_COUNT);
+      // First frame is highest priority — await it alone so canvas can render immediately.
+      await loadOne(0);
+      // Next priority chunk in parallel (browser caps at 6-8 per origin on HTTP/2 anyway).
+      const priorityPromises: Promise<void>[] = [];
+      for (let i = 1; i < priorityEnd; i++) priorityPromises.push(loadOne(i));
+      await Promise.all(priorityPromises);
+
+      // Background pass: load the rest in 12-frame batches to keep network from saturating.
+      const BATCH = 12;
+      for (let start = priorityEnd; start < FRAME_COUNT && !cancelled; start += BATCH) {
+        const batch: Promise<void>[] = [];
+        const end = Math.min(start + BATCH, FRAME_COUNT);
+        for (let i = start; i < end; i++) batch.push(loadOne(i));
+        await Promise.all(batch);
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
   }, [isMounted, isMobile]);
 
-  // 2. Render Canvas Frame
+  // 2. Render Canvas Frame — pick the nearest loaded frame if the exact one isn't ready yet.
   const renderFrame = (progress: number) => {
-    if (images.length !== FRAME_COUNT || !canvasRef.current) return;
-    
+    if (!canvasRef.current) return;
+    const images = imagesRef.current;
+    if (!images.length) return;
+
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     // Map 0-0.85 progress to 0-(FRAME_COUNT-1), holding the last frame for the remaining 15% scroll
     const adjustedProgress = progress / 0.85;
-    const index = Math.min(
+    const idealIndex = Math.min(
       FRAME_COUNT - 1,
       Math.max(0, Math.floor(adjustedProgress * FRAME_COUNT))
     );
-    
-    const img = images[index];
+
+    // Find nearest already-loaded frame so animation doesn't stall while background loading.
+    let img = images[idealIndex];
+    if (!img) {
+      for (let d = 1; d < FRAME_COUNT; d++) {
+        if (images[idealIndex - d]) { img = images[idealIndex - d]; break; }
+        if (images[idealIndex + d]) { img = images[idealIndex + d]; break; }
+      }
+    }
     if (!img) return;
 
-    // Clear and draw black background
     ctx.fillStyle = "#000000";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    // Dynamic sizing (Cover implementation)
     const scale = Math.max(canvas.width / img.width, canvas.height / img.height);
     const x = (canvas.width / 2) - (img.width / 2) * scale;
     const y = (canvas.height / 2) - (img.height / 2) * scale;
-    
-    // Draw scaled image
+
     ctx.drawImage(img, x, y, img.width * scale, img.height * scale);
   };
 
-  // 3. Handle Canvas Resize
+  // 3. Handle Canvas Resize — re-runs when canvas appears (isMounted) and when frames are ready.
   useEffect(() => {
     const handleResize = () => {
       if (canvasRef.current) {
         canvasRef.current.width = window.innerWidth;
         canvasRef.current.height = window.innerHeight;
-        // Re-render immediately on resize using current progress
         renderFrame(smoothProgress.get());
       }
     };
-    
-    handleResize(); // Initial sizing
-    window.addEventListener("resize", handleResize);
-    
-    return () => window.removeEventListener("resize", handleResize);
-  }, [images, smoothProgress]);
 
-  // 4. Bind Scroll Progress to Canvas Drawing
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, [isMounted, ready, smoothProgress]);
+
+  // 4. Bind Scroll Progress to Canvas Drawing — also re-draws when the first frame arrives.
   useEffect(() => {
+    if (ready) renderFrame(smoothProgress.get());
     const unsubscribe = smoothProgress.on("change", (latest) => {
       renderFrame(latest);
     });
-    
     return () => unsubscribe();
-  }, [images, smoothProgress]);
+  }, [ready, smoothProgress]);
 
 
   // Text Overlay Animations
@@ -139,8 +189,9 @@ export default function Hero() {
   // Scroll Indicator fades out almost immediately
   const scrollIndicatorOpacity = useTransform(smoothProgress, [0, 0.05], [1, 0]);
 
-  const isLoading = loaded < FRAME_COUNT;
-  const progressPercent = Math.round((loaded / FRAME_COUNT) * 100);
+  // Hide the loading overlay as soon as the first frames are visible.
+  const isLoading = !ready;
+  const progressPercent = progressPct;
 
   // Render Mobile Fallback instantly to avoid loading 146 frames
   if (isMounted && isMobile) {

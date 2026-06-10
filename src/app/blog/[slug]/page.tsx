@@ -76,7 +76,7 @@ export default async function BlogArticle({ params }: Props) {
           <div className="mt-20 lg:mt-24 text-center border-t border-slate/10 pt-12">
             <Link
               href="/blog"
-              className="font-serif italic text-lg text-[#C27347] hover:text-[#A85E3A] transition-colors duration-500 inline-flex items-center gap-2"
+              className="font-serif italic text-lg text-[#C27347] hover:text-[#C27347] transition-colors duration-500 inline-flex items-center gap-2"
             >
               <span aria-hidden="true">←</span>
               <span>Zurück zum Schreibtisch</span>
