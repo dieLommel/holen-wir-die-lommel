@@ -2,7 +2,7 @@
 title: "Trauer im Unternehmen — was Führungskräfte tun können, wenn Worte fehlen"
 slug: "trauer-im-unternehmen-fuehrungskraefte"
 funnelStage: "Trust"
-publishedAt: "2026-08-13"
+publishedAt: "2026-08-01"
 primaryKeyword: "Trauer im Unternehmen"
 secondaryKeywords:
   - "Trauerfall Mitarbeiter Mittelstand"

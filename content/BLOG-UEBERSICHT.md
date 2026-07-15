@@ -32,7 +32,7 @@ coverImageAlt: string
 | 04 | loslassen-ohne-dich-zu-verlieren | Trust | 2026-06-11 | Identitätsarbeit des Seniors 12–18 Monate vor der Übergabe |
 | 05 | kind-uebernimmt-familienunternehmen-nicht | Trust | 2026-07-16 † | 4 Optionen, wenn das eigene Kind nicht übernehmen will |
 | 06 | geschwister-streit-familienunternehmen-vermeiden | Trust | 2026-07-30 † | Geschwister-Konflikte: Warnsignale, Kipppunkte, Prävention |
-| 07 | trauer-im-unternehmen-fuehrungskraefte | Trust | 2026-08-13 † | Trauer/Tod als blinder Fleck in KMU ohne Personalabteilung; wann das Unternehmen selbst Auslöser ist |
+| 07 | trauer-im-unternehmen-fuehrungskraefte | Trust | 2026-08-01 † | Trauer/Tod als blinder Fleck in KMU ohne Personalabteilung; wann das Unternehmen selbst Auslöser ist |
 
 † Publish-Datum liegt (Stand heute) in der Zukunft — die Seite filtert aber nicht nach Datum, alle drei sind trotzdem schon live. Falls das nicht so gewollt war, kurz Bescheid geben.
 
