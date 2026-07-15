@@ -14,7 +14,8 @@ Next.js 16.2.3 (App Router, Turbopack), React 19, TypeScript, Tailwind CSS v4, F
 - `src/components/sections/` — homepage sections (Hero, Identification, ProblemSticky, Solution, Process, Pricing, FAQ, AboutStory, CTA, Footer, Navbar…)
 - `src/components/blog/` — article layout, cards, scroll-reveal
 - `src/components/ui/` — shared primitives + 3D (`GoldenRock3D`, `SplineScene`)
-- `content/blog/*.md` — blog posts (frontmatter + markdown, read via `src/lib/blog.ts`)
+- `content/blog/*.md` — blog posts (frontmatter + markdown, read via `src/lib/blog.ts`). Every `.md` file in this exact folder becomes a live article — never drop reference/scratch files in here.
+- `content/BLOG-UEBERSICHT.md` — reference: existing articles, frontmatter schema, reused story anchors, tone patterns. Read before writing or editing a blog post; update its table after adding a new one.
 - `src/lib/schema.ts` — JSON-LD for SEO
 - `DESIGNGUIDE-Stefanie-Lommel.html` — visual design reference, check before styling decisions
 - Accent color `#C27347`
