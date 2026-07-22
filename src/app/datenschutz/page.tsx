@@ -2,6 +2,8 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Datenschutzerklärung | Holen wir die Lommel",
+  description:
+    "Datenschutzerklärung von dieLommel.de: Informationen zur Verarbeitung personenbezogener Daten gemäß DSGVO.",
 };
 
 export default function Datenschutz() {

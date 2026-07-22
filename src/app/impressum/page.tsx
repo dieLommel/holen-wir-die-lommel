@@ -2,6 +2,8 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Impressum | Holen wir die Lommel",
+  description:
+    "Impressum und Anbieterkennzeichnung von Stefanie Lommel, Wandelbegleiterin für Familienunternehmen (dieLommel.de).",
 };
 
 export default function Impressum() {

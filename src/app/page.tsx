@@ -14,7 +14,8 @@ import Footer from "@/components/sections/Footer";
 
 export const metadata = {
   title: "Stefanie Lommel | Holt mal die Lommel",
-  description: "Wandelbegleitung für Familien- und Traditionsunternehmen. Bevor es kippt.",
+  description:
+    "Wandelbegleitung für Familien- und Traditionsunternehmen: externe Begleitung auf Entscheidungsebene bei Nachfolge und Umbruch – bevor es kippt.",
 };
 
 export default function Home() {

@@ -2,6 +2,8 @@ import Link from "next/link";
 
 export const metadata = {
   title: "AGB | Holen wir die Lommel",
+  description:
+    "Allgemeine Geschäftsbedingungen für Coaching- und Wandelbegleitungsleistungen von Stefanie Lommel gegenüber Unternehmern im Sinne des § 14 BGB.",
 };
 
 export default function AGB() {
