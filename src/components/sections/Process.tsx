@@ -21,7 +21,7 @@ const steps = [
   {
     num: "03",
     title: "Würdevoll entscheiden",
-    desc: "Vom Kopf-Füßler zum Herz-Lauscher: Wir erarbeiten Schritte, die wirtschaftlich zwingend und menschlich intakt sind.",
+    desc: "Entscheidungen mit Kopf und Gespür: Wir erarbeiten Schritte, die wirtschaftlich zwingend und menschlich intakt sind.",
     offset: "lg:mt-0"
   }
 ];

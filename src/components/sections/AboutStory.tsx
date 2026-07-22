@@ -57,7 +57,7 @@ export default function AboutStory() {
                 Über 30 Jahre in großen Systemen und Konzernen. Von der Insolvenzbegleitung mit 200 Mitarbeitenden im Jahr 2008 bis zur tiefen Wandelbegleitung heute. Ich kenne das Gewicht von Entscheidungen, die Existenzen betreffen – aus eigener Erfahrung.
               </p>
               <p>
-                Mein Weg führte mich vom Kopf-Füßler zum Herz-Lauscher. Nicht gegen den Verstand, sondern mit ihm. Denn Spiritualität ohne Bodenhaftung ist mir genauso fremd wie Business ohne Menschlichkeit.
+                Mein Weg führte mich von der reinen Kopf-Entscheidung zu einem sicheren Gespür für Menschen und Situationen. Nicht gegen den Verstand, sondern mit ihm. Denn Spiritualität ohne Bodenhaftung ist mir genauso fremd wie Business ohne Menschlichkeit.
               </p>
               
               <blockquote className="mt-12 pl-8 border-l border-[#C27347]/40 w-max">
