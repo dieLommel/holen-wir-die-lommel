@@ -22,7 +22,7 @@ coverImage: "/images/blog/articles/<slug>.jpg"
 coverImageAlt: string
 ```
 
-## Vorhandene Artikel (7, Stand 2026-07-15)
+## Vorhandene Artikel (8, Stand 2026-07-31)
 
 | # | Slug | Funnel-Stage | Published | Thema |
 |---|------|-------------|-----------|-------|
@@ -33,10 +33,11 @@ coverImageAlt: string
 | 05 | kind-uebernimmt-familienunternehmen-nicht | Trust | 2026-07-16 † | 4 Optionen, wenn das eigene Kind nicht übernehmen will |
 | 06 | geschwister-streit-familienunternehmen-vermeiden | Trust | 2026-07-30 † | Geschwister-Konflikte: Warnsignale, Kipppunkte, Prävention |
 | 07 | trauer-im-unternehmen-fuehrungskraefte | Trust | 2026-08-01 † | Trauer/Tod als blinder Fleck in KMU ohne Personalabteilung; wann das Unternehmen selbst Auslöser ist |
+| 08 | mediation-statt-gericht-familienunternehmen | Consideration | 2026-08-01 † | Warum Unternehmer den Rechtsweg der Mediation vorziehen; was Mediation stattdessen leistet (mit Mediations-Beispiel) |
 
 † Publish-Datum liegt (Stand heute) in der Zukunft — die Seite filtert aber nicht nach Datum, alle drei sind trotzdem schon live. Falls das nicht so gewollt war, kurz Bescheid geben.
 
-**Funnel-Verteilung:** 1× Awareness, 1× Consideration, 1× Decision, 4× Trust — Trust ist aktuell am stärksten besetzt.
+**Funnel-Verteilung:** 1× Awareness, 2× Consideration, 1× Decision, 4× Trust — Trust ist aktuell am stärksten besetzt.
 
 **Herkunft Artikel 07:** entstanden aus Episode BBB10 des Podcasts "Business Bling Bekenntnisse" (Stefanie + Petra Kahley) — nur die Wirtschafts-/Trauer-Substanz aus Stefanies eigenen Anekdoten übernommen, Petras persönliche Geschichte bewusst ausgeschlossen. Transkript liegt in `../podcast/Episoden/`.
 
@@ -50,6 +51,7 @@ Persönliche Anekdoten, die als roter Faden durch mehrere Artikel laufen — nü
 - **A4-Tarifverhandlungen / A4-Tarif-Mediation** — 9 Jahre Flugsicherung, Tarifrunden/Mediation (→ 02 **und** 06, zweimal verwendet)
 - **A5-Goldschmiedin-Story** — mit 16 wollte sie Goldschmiedin werden, Vater lehnte ab (→ 05)
 - **A6-Allein-im-Teammeeting** — Mitarbeiterin verliert ihren Sohn, steht ohne Rückendeckung allein im Teammeeting da (→ 07)
+- **A7-Kuendigung-Mediation** — echter Fall: Unternehmer kündigt Bereichsleiter ohne vorheriges Gespräch → Kündigungsschutzklage, Gericht, gespaltene Belegschaft; „Besser, das Gericht entscheidet, dann habe ich recht." War Stefanies persönlicher Anlass für die Mediationsausbildung (→ 08)
 
 ## Ton & wiederkehrende Muster
 
