@@ -30,12 +30,22 @@ export interface BlogPost {
 
 const BLOG_DIR = path.join(process.cwd(), "content", "blog");
 
-/** Liste aller Blog-Slugs (für generateStaticParams) */
+/** Ist publishedAt erreicht oder in der Vergangenheit? */
+function isPublished(publishedAt: string): boolean {
+  return new Date(publishedAt).getTime() <= Date.now();
+}
+
+/** Liste aller veröffentlichten Blog-Slugs (für generateStaticParams, Sitemap) */
 export function getAllBlogSlugs(): string[] {
   if (!fs.existsSync(BLOG_DIR)) return [];
   return fs
     .readdirSync(BLOG_DIR)
     .filter((f) => f.endsWith(".md"))
+    .filter((f) => {
+      const raw = fs.readFileSync(path.join(BLOG_DIR, f), "utf-8");
+      const { data } = matter(raw);
+      return isPublished((data as BlogPostFrontmatter).publishedAt);
+    })
     .map((f) => f.replace(/\.md$/, ""))
     .map((s) => s.replace(/^\d+-/, ""));
 }
@@ -50,7 +60,7 @@ function findFileBySlug(slug: string): string | null {
   return match ? path.join(BLOG_DIR, match) : null;
 }
 
-/** Einzelnen Blog-Post laden */
+/** Einzelnen Blog-Post laden. null, wenn Datei fehlt ODER publishedAt noch in der Zukunft liegt. */
 export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
   const filePath = findFileBySlug(slug);
   if (!filePath) return null;
@@ -58,6 +68,8 @@ export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> 
   const raw = fs.readFileSync(filePath, "utf-8");
   const { data, content } = matter(raw);
   const fm = data as BlogPostFrontmatter;
+
+  if (!isPublished(fm.publishedAt)) return null;
 
   const stats = readingTime(content);
   const readMin = `${Math.max(1, Math.round(stats.minutes))} Min`;
