@@ -1,6 +1,6 @@
 # holen-wir-die-lommel
 
-Website for **dieLommel.de** — Stefanie Lommel's "Wandelbegleitung" brand: change-accompaniment for owners/CEOs of family businesses ("Traditionshäuser") navigating succession or transformation crises. Tagline: "Holt mal die Lommel." Tone: precise and calm, no consulting-jargon, no coaching-speak.
+Website for **dieLommel.de** — Stefanie Lommel's "Wandelbegleitung" brand: change-accompaniment for owners/CEOs of family businesses ("Traditionshäuser") navigating succession or transformation crises. Tagline: "Holen wir die Lommel." (confirmed by Stefanie; "Holt mal die Lommel." appears only as a colleagues' quote in blog 01, keep it there). Tone: precise and calm, no consulting-jargon, no coaching-speak.
 
 Stefanie directs content/design, Claude Code handles implementation — she describes herself as not technical. Explain changes in plain language rather than assuming she'll read a diff.
 

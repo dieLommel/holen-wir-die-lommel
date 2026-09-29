@@ -13,7 +13,7 @@ import CTA from "@/components/sections/CTA";
 import Footer from "@/components/sections/Footer";
 
 export const metadata = {
-  title: "Stefanie Lommel | Holt mal die Lommel",
+  title: "Stefanie Lommel | Holen wir die Lommel",
   description:
     "Wandelbegleitung für Familien- und Traditionsunternehmen: externe Begleitung auf Entscheidungsebene bei Nachfolge und Umbruch – bevor es kippt.",
 };
