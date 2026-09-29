@@ -22,7 +22,7 @@ coverImage: "/images/blog/articles/<slug>.jpg"
 coverImageAlt: string
 ```
 
-## Vorhandene Artikel (9, Stand 2026-09-29)
+## Vorhandene Artikel (10, Stand 2026-09-29)
 
 | # | Slug | Funnel-Stage | Published | Thema |
 |---|------|-------------|-----------|-------|
@@ -35,10 +35,11 @@ coverImageAlt: string
 | 07 | trauer-im-unternehmen-fuehrungskraefte | Trust | 2026-08-01 † | Trauer/Tod als blinder Fleck in KMU ohne Personalabteilung; wann das Unternehmen selbst Auslöser ist |
 | 08 | mediation-statt-gericht-familienunternehmen | Consideration | 2026-08-01 † | Warum Unternehmer den Rechtsweg der Mediation vorziehen; was Mediation stattdessen leistet (mit Mediations-Beispiel) |
 | 09 | kerngeschaeft-bricht-weg | Awareness | 2026-10-15 † | Ist ein wegbrechendes Kerngeschäft Versagen? Mit S&P-500/Innosight-Zahlen zum Tempo der Marktveränderung; verlinkt auf Artikel 01 |
+| 10 | resilienzfalle-mittelstand | Decision | 2026-11-01 † | Warum die Kraft für Wandel fehlt, wenn sie am dringendsten gebraucht wird; 3-Wege-Vergleich (Risiko-Report 2026), verlinkt auf 03 und 09 |
 
-† Publish-Datum liegt (Stand heute) in der Zukunft — die Seite filtert aber nicht nach Datum, alle vier sind trotzdem schon live. Falls das nicht so gewollt war, kurz Bescheid geben.
+† Publish-Datum liegt (Stand heute) in der Zukunft — die Seite filtert aber nicht nach Datum, alle fünf sind trotzdem schon live. Falls das nicht so gewollt war, kurz Bescheid geben.
 
-**Funnel-Verteilung:** 2× Awareness, 2× Consideration, 1× Decision, 4× Trust — Trust weiterhin am stärksten besetzt, Awareness mit Artikel 09 aber aufgeholt.
+**Funnel-Verteilung:** 2× Awareness, 2× Consideration, 2× Decision, 4× Trust — Trust weiterhin am stärksten besetzt, die anderen drei jetzt gleichauf.
 
 **Herkunft Artikel 07:** entstanden aus Episode BBB10 des Podcasts "Business Bling Bekenntnisse" (Stefanie + Petra Kahley) — nur die Wirtschafts-/Trauer-Substanz aus Stefanies eigenen Anekdoten übernommen, Petras persönliche Geschichte bewusst ausgeschlossen. Transkript liegt in `../podcast/Episoden/`.
 
@@ -53,7 +54,8 @@ Persönliche Anekdoten, die als roter Faden durch mehrere Artikel laufen — nü
 - **A5-Goldschmiedin-Story** — mit 16 wollte sie Goldschmiedin werden, Vater lehnte ab (→ 05)
 - **A6-Allein-im-Teammeeting** — Mitarbeiterin verliert ihren Sohn, steht ohne Rückendeckung allein im Teammeeting da (→ 07)
 - **A7-Kuendigung-Mediation** — echter Fall: Unternehmer kündigt Bereichsleiter ohne vorheriges Gespräch → Kündigungsschutzklage, Gericht, gespaltene Belegschaft; „Besser, das Gericht entscheidet, dann habe ich recht." War Stefanies persönlicher Anlass für die Mediationsausbildung (→ 08)
-- **A8-Kerngeschaeft-Bricht-Weg** — Eröffnungs-Anekdote ist ein bewusst komponiertes Platzhalter-Szenario (Inhaber 3. Generation), keine reale Anekdote. Zusätzlich ein eigener, echter (aber bewusst allgemein gehaltener) Abschnitt: Stefanie hat selbst nach Jahren der Selbstständigkeit im Beraterumfeld einen Schnitt gemacht und neu angefangen, weil sich die Marktbedingungen verändert hatten — bewusst in abgeschlossener Vergangenheitsform erzählt, nicht als laufende Situation (siehe [[feedback_personal_vulnerability_framing]]) (→ 09)
+- **A8-Kerngeschaeft-Bricht-Weg** — Eröffnungs-Anekdote ist ein bewusst komponiertes Platzhalter-Szenario (Inhaber 3. Generation), keine reale Anekdote. Zusätzlich ein eigener, echter (aber bewusst allgemein gehaltener) Abschnitt: Stefanie hat selbst nach Jahren der Selbstständigkeit im Beraterumfeld einen Schnitt gemacht und neu angefangen, weil sich die Marktbedingungen verändert hatten — bewusst in abgeschlossener Vergangenheitsform erzählt, nicht als laufende Situation (siehe [[feedback_personal_vulnerability_framing]]) (→ 09, kurz erneut referenziert mit Link in → 10)
+- **A9-Resilienzfalle-Aufschub** — Eröffnungs-Anekdote ebenfalls Platzhalter-Komposit (Unternehmerin, zweite Führungsebene seit 2 Jahren aufgeschoben), keine reale Anekdote. Reale Ergänzung: Stefanie hat nach dem eigenen Schnitt (siehe A8) erst im Nachhinein gemerkt, wie viel Kraft sie vorher schon verloren hatte — Kernbeleg für die Resilienzfalle selbst (→ 10)
 
 ## Ton & wiederkehrende Muster
 
