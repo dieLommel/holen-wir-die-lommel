@@ -32,13 +32,13 @@ coverImageAlt: string
 | 02 | generationswechsel-ohne-vertrauensverlust | Consideration | 2026-06-18 | Generationswechsel gestalten, ohne Vertrauen zu verlieren |
 | 03 | sparringspartner-statt-berater | Decision | 2026-07-02 | Sparringspartner vs. Berater vs. Coach; wann ein Vorgespräch sinnvoll ist |
 | 04 | loslassen-ohne-dich-zu-verlieren | Trust | 2026-06-11 | Identitätsarbeit des Seniors 12–18 Monate vor der Übergabe |
-| 05 | kind-uebernimmt-familienunternehmen-nicht | Trust | 2026-07-16 † | 4 Optionen, wenn das eigene Kind nicht übernehmen will |
-| 06 | geschwister-streit-familienunternehmen-vermeiden | Trust | 2026-07-30 † | Geschwister-Konflikte: Warnsignale, Kipppunkte, Prävention |
-| 07 | trauer-im-unternehmen-fuehrungskraefte | Trust | 2026-08-01 † | Trauer/Tod als blinder Fleck in KMU ohne Personalabteilung; wann das Unternehmen selbst Auslöser ist |
-| 08 | mediation-statt-gericht-familienunternehmen | Consideration | 2026-08-01 † | Warum Unternehmer den Rechtsweg der Mediation vorziehen; was Mediation stattdessen leistet (mit Mediations-Beispiel) |
+| 05 | kind-uebernimmt-familienunternehmen-nicht | Trust | 2026-07-16 | 4 Optionen, wenn das eigene Kind nicht übernehmen will |
+| 06 | geschwister-streit-familienunternehmen-vermeiden | Trust | 2026-07-30 | Geschwister-Konflikte: Warnsignale, Kipppunkte, Prävention |
+| 07 | trauer-im-unternehmen-fuehrungskraefte | Trust | 2026-08-01 | Trauer/Tod als blinder Fleck in KMU ohne Personalabteilung; wann das Unternehmen selbst Auslöser ist |
+| 08 | mediation-statt-gericht-familienunternehmen | Consideration | 2026-08-01 | Warum Unternehmer den Rechtsweg der Mediation vorziehen; was Mediation stattdessen leistet (mit Mediations-Beispiel) |
 | 09 | kerngeschaeft-bricht-weg | Awareness | 2026-10-15 † | Ist ein wegbrechendes Kerngeschäft Versagen? Mit S&P-500/Innosight-Zahlen zum Tempo der Marktveränderung; verlinkt auf Artikel 01 |
 
-† Publish-Datum liegt (Stand heute) in der Zukunft — die Seite filtert aber nicht nach Datum, alle vier sind trotzdem schon live. Falls das nicht so gewollt war, kurz Bescheid geben.
+† Publish-Datum liegt, Stand heute (2026-09-29), noch in der Zukunft — die Seite filtert nicht nach Datum, der Artikel ist trotzdem schon live. Dieses Zeichen wandert mit: sobald das Datum erreicht ist, ist der Artikel einfach regulär veröffentlicht und die Markierung entfällt beim nächsten Update dieser Datei. Bei einer Änderung, die eine echte Datums-Sperre einbaut, wären 01–08 davon unberührt (ihr Datum liegt schon in der Vergangenheit), nur 09 (und der gehaltene Entwurf 10) würden dann tatsächlich bis zu ihrem Datum ausgeblendet.
 
 **Funnel-Verteilung (live):** 2× Awareness, 2× Consideration, 1× Decision, 4× Trust.
 
