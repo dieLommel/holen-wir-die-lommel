@@ -2,7 +2,7 @@
 title: "Wenn dein Kerngeschäft wegbricht, hast du versagt?"
 slug: "kerngeschaeft-bricht-weg"
 funnelStage: "Awareness"
-publishedAt: "2026-10-15"
+publishedAt: "2026-10-01"
 primaryKeyword: "Kerngeschäft bricht weg"
 secondaryKeywords:
   - "Geschäftsmodell verändern ohne Scheitern"
