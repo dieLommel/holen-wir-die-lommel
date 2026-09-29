@@ -22,7 +22,9 @@ coverImage: "/images/blog/articles/<slug>.jpg"
 coverImageAlt: string
 ```
 
-## Vorhandene Artikel (10, Stand 2026-09-29)
+## Vorhandene Artikel (9 live, Stand 2026-09-29)
+
+**Wichtig: `publishedAt` steuert nicht die Sichtbarkeit.** `src/lib/blog.ts` filtert nicht nach Datum. Jede Datei in `content/blog/` ist sofort live, sobald sie gepusht ist, unabhängig vom Datum im Frontmatter. Stefanie postet lieber nacheinander als mehrere Artikel gleichzeitig — deshalb bleibt ein fertiger Artikel in `content/drafts/`, bis er wirklich veröffentlicht werden soll, und wird erst dann nach `content/blog/` verschoben und gepusht. Nicht vorher "schon mal fertigstellen und pushen".
 
 | # | Slug | Funnel-Stage | Published | Thema |
 |---|------|-------------|-----------|-------|
@@ -35,11 +37,18 @@ coverImageAlt: string
 | 07 | trauer-im-unternehmen-fuehrungskraefte | Trust | 2026-08-01 † | Trauer/Tod als blinder Fleck in KMU ohne Personalabteilung; wann das Unternehmen selbst Auslöser ist |
 | 08 | mediation-statt-gericht-familienunternehmen | Consideration | 2026-08-01 † | Warum Unternehmer den Rechtsweg der Mediation vorziehen; was Mediation stattdessen leistet (mit Mediations-Beispiel) |
 | 09 | kerngeschaeft-bricht-weg | Awareness | 2026-10-15 † | Ist ein wegbrechendes Kerngeschäft Versagen? Mit S&P-500/Innosight-Zahlen zum Tempo der Marktveränderung; verlinkt auf Artikel 01 |
-| 10 | resilienzfalle-mittelstand | Decision | 2026-11-01 † | Warum die Kraft für Wandel fehlt, wenn sie am dringendsten gebraucht wird; 3-Wege-Vergleich (Risiko-Report 2026), verlinkt auf 03 und 09 |
 
-† Publish-Datum liegt (Stand heute) in der Zukunft — die Seite filtert aber nicht nach Datum, alle fünf sind trotzdem schon live. Falls das nicht so gewollt war, kurz Bescheid geben.
+† Publish-Datum liegt (Stand heute) in der Zukunft — die Seite filtert aber nicht nach Datum, alle vier sind trotzdem schon live. Falls das nicht so gewollt war, kurz Bescheid geben.
 
-**Funnel-Verteilung:** 2× Awareness, 2× Consideration, 2× Decision, 4× Trust — Trust weiterhin am stärksten besetzt, die anderen drei jetzt gleichauf.
+**Funnel-Verteilung (live):** 2× Awareness, 2× Consideration, 1× Decision, 4× Trust.
+
+## Fertig, aber bewusst noch nicht live
+
+| # | Slug | Funnel-Stage | Geplantes Datum | Thema |
+|---|------|-------------|-----------|-------|
+| 10 | resilienzfalle-mittelstand | Decision | 2026-11-01 | Warum die Kraft für Wandel fehlt, wenn sie am dringendsten gebraucht wird; 3-Wege-Vergleich (Risiko-Report 2026), verlinkt auf 03 und 09 |
+
+Liegt fertig in `content/drafts/10-resilienzfalle-mittelstand.md`, Bild liegt schon unter `public/images/blog/articles/resilienzfalle-mittelstand.jpg`. Erst auf Stefanies Signal nach `content/blog/` verschieben und pushen.
 
 **Herkunft Artikel 07:** entstanden aus Episode BBB10 des Podcasts "Business Bling Bekenntnisse" (Stefanie + Petra Kahley) — nur die Wirtschafts-/Trauer-Substanz aus Stefanies eigenen Anekdoten übernommen, Petras persönliche Geschichte bewusst ausgeschlossen. Transkript liegt in `../podcast/Episoden/`.
 
