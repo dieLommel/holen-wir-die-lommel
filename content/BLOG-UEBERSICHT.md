@@ -24,7 +24,7 @@ coverImageAlt: string
 
 ## Vorhandene Artikel (10, Stand 2026-09-29)
 
-**`publishedAt` steuert seit dem 29.09.2026 wirklich die Sichtbarkeit** (`src/lib/blog.ts`, `isPublished()`). Ein Artikel mit Datum in der Zukunft ist zwar schon als Datei in `content/blog/` und gepusht, aber weder gelistet noch über die URL erreichbar (404), bis sein Datum erreicht ist. Er erscheint dann von selbst, ohne dass noch mal etwas verschoben oder gepusht werden muss. Vorher (bis inkl. Artikel 09) hatte `publishedAt` keine Wirkung auf die Sichtbarkeit, nur auf Sortierung und Anzeige.
+**`publishedAt` steuert seit dem 29.09.2026 wirklich die Sichtbarkeit** (`src/lib/blog.ts`, `isPublished()`). Ein Artikel mit Datum in der Zukunft ist zwar schon als Datei in `content/blog/` und gepusht, aber weder gelistet noch über die URL erreichbar (404), bis sein Datum erreicht ist. Er erscheint dann von selbst, ohne dass noch mal etwas verschoben oder gepusht werden muss. Damit das klappt, rechnen Übersicht (`blog/page.tsx`), Artikelseite (`blog/[slug]/page.tsx`) und Sitemap (`sitemap.ts`) per `export const revalidate = 600` alle 10 Minuten neu. Ohne das wären die Seiten beim letzten Deploy eingefroren: Artikel 09 war am 01.10. per Direktlink erreichbar, stand aber bis zum 04.10. nicht in Übersicht und Sitemap (Fehler vom 29.09., am 04.10. behoben). Die Sperre allein reicht also nicht, die Neuberechnung gehört zwingend dazu. Vorher (bis inkl. Artikel 09) hatte `publishedAt` keine Wirkung auf die Sichtbarkeit, nur auf Sortierung und Anzeige.
 
 Trotzdem gilt weiter: Stefanie postet lieber nacheinander als mehrere auf einmal fertigzustellen. Ein neuer Artikel wird erst dann nach `content/blog/` verschoben und gepusht, wenn Stefanie das für genau diesen Artikel freigibt, auch wenn dank echter Datums-Sperre technisch nichts mehr schiefgehen könnte.
 
@@ -38,7 +38,7 @@ Trotzdem gilt weiter: Stefanie postet lieber nacheinander als mehrere auf einmal
 | 06 | geschwister-streit-familienunternehmen-vermeiden | Trust | 2026-07-30 | Geschwister-Konflikte: Warnsignale, Kipppunkte, Prävention |
 | 07 | trauer-im-unternehmen-fuehrungskraefte | Trust | 2026-08-01 | Trauer/Tod als blinder Fleck in KMU ohne Personalabteilung; wann das Unternehmen selbst Auslöser ist |
 | 08 | mediation-statt-gericht-familienunternehmen | Consideration | 2026-08-01 | Warum Unternehmer den Rechtsweg der Mediation vorziehen; was Mediation stattdessen leistet (mit Mediations-Beispiel) |
-| 09 | kerngeschaeft-bricht-weg | Awareness | 2026-10-01 ⏳ | Ist ein wegbrechendes Kerngeschäft Versagen? Mit S&P-500/Innosight-Zahlen zum Tempo der Marktveränderung; verlinkt auf Artikel 01 |
+| 09 | kerngeschaeft-bricht-weg | Awareness | 2026-10-01 | Ist ein wegbrechendes Kerngeschäft Versagen? Mit S&P-500/Innosight-Zahlen zum Tempo der Marktveränderung; verlinkt auf Artikel 01 |
 | 10 | resilienzfalle-mittelstand | Decision | 2026-11-01 ⏳ | Warum die Kraft für Wandel fehlt, wenn sie am dringendsten gebraucht wird; 3-Wege-Vergleich (Risiko-Report 2026), verlinkt auf 03 und 09 |
 
 ⏳ Datum liegt (Stand heute) noch in der Zukunft. Artikel ist gepusht, aber wegen der echten Datums-Sperre noch nicht sichtbar, weder gelistet noch per Direktlink. Erscheint automatisch am angegebenen Tag.

@@ -22,6 +22,9 @@ export const metadata: Metadata = {
   },
 };
 
+// Regelmäßig neu berechnen, damit Artikel mit zukünftigem publishedAt am Tag selbst erscheinen.
+export const revalidate = 600;
+
 export default async function BlogIndex() {
   const posts = await getAllBlogPosts();
   const [featured, ...rest] = posts;

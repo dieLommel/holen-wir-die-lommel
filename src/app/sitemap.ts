@@ -3,6 +3,9 @@ import { getAllBlogSlugs } from "@/lib/blog";
 
 const BASE = "https://www.dielommel.de";
 
+// Regelmäßig neu berechnen, damit Artikel mit zukünftigem publishedAt am Tag selbst erscheinen.
+export const revalidate = 600;
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const staticRoutes = ["", "/blog", "/datenschutz", "/impressum", "/agb"];

@@ -9,6 +9,9 @@ import ArticleBody, { ArticleCta } from "@/components/blog/ArticleBody";
 import { getAllBlogSlugs, getBlogPostBySlug } from "@/lib/blog";
 import { buildArticleSchema } from "@/lib/schema";
 
+// Regelmäßig neu berechnen, damit Artikel mit zukünftigem publishedAt am Tag selbst erscheinen.
+export const revalidate = 600;
+
 interface Props {
   params: Promise<{ slug: string }>;
 }
