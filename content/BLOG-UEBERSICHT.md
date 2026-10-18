@@ -39,9 +39,7 @@ Trotzdem gilt weiter: Stefanie postet lieber nacheinander als mehrere auf einmal
 | 07 | trauer-im-unternehmen-fuehrungskraefte | Trust | 2026-08-01 | Trauer/Tod als blinder Fleck in KMU ohne Personalabteilung; wann das Unternehmen selbst Auslöser ist |
 | 08 | mediation-statt-gericht-familienunternehmen | Consideration | 2026-08-01 | Warum Unternehmer den Rechtsweg der Mediation vorziehen; was Mediation stattdessen leistet (mit Mediations-Beispiel) |
 | 09 | kerngeschaeft-bricht-weg | Awareness | 2026-10-01 | Ist ein wegbrechendes Kerngeschäft Versagen? Mit S&P-500/Innosight-Zahlen zum Tempo der Marktveränderung; verlinkt auf Artikel 01 |
-| 10 | resilienzfalle-mittelstand | Decision | 2026-11-01 ⏳ | Warum die Kraft für Wandel fehlt, wenn sie am dringendsten gebraucht wird; 3-Wege-Vergleich (Risiko-Report 2026), verlinkt auf 03 und 09 |
-
-⏳ Datum liegt (Stand heute) noch in der Zukunft. Artikel ist gepusht, aber wegen der echten Datums-Sperre noch nicht sichtbar, weder gelistet noch per Direktlink. Erscheint automatisch am angegebenen Tag.
+| 10 | resilienzfalle-mittelstand | Decision | 2026-10-18 | Warum die Kraft für Wandel fehlt, wenn sie am dringendsten gebraucht wird; 3-Wege-Vergleich (Risiko-Report 2026), verlinkt auf 03 und 09 |
 
 **Funnel-Verteilung:** 2× Awareness, 2× Consideration, 2× Decision, 4× Trust.
 

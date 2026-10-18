@@ -2,7 +2,7 @@
 title: "Die Resilienzfalle: Warum dir genau dann die Kraft fehlt, wenn du sie am meisten brauchst"
 slug: "resilienzfalle-mittelstand"
 funnelStage: "Decision"
-publishedAt: "2026-11-01"
+publishedAt: "2026-10-18"
 primaryKeyword: "Resilienzfalle Mittelstand"
 secondaryKeywords:
   - "Kraft für Veränderung Unternehmer"
