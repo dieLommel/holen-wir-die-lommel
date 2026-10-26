@@ -102,4 +102,6 @@ Aussprechen. Nicht im Beirat. Nicht im Familienrat. Erstmal nur — mit dir selb
 
 Nimm dir eine Stunde. Geh laufen, geh ans Wasser, irgendwohin, wo niemand zuhört. Und sprich die sieben Signale durch. Welche kennst du? Welche kennst du, aber willst sie nicht kennen? Welche hast du schon vor zwei Jahren gewusst?
 
+Wenn du die sieben Zeichen lieber schwarz auf weiß durchgehen willst: Ich habe sie dir als kurzen [Selbstcheck zum Herunterladen](/selbstcheck) zusammengestellt, mit einer Frage zu jedem Zeichen.
+
 Wenn du danach das Gefühl hast, du musst das mit jemand teilen, der zuhört und nicht doziert — dann ist die zweite Stunde ein Telefonat. Das ist der Punkt, an dem du nicht mehr alleine bist.

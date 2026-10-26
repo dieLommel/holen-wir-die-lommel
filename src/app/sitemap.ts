@@ -8,7 +8,7 @@ export const revalidate = 600;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  const staticRoutes = ["", "/blog", "/datenschutz", "/impressum", "/agb"];
+  const staticRoutes = ["", "/blog", "/selbstcheck", "/datenschutz", "/impressum", "/agb"];
   const blogRoutes = getAllBlogSlugs().map((slug) => `/blog/${slug}`);
 
   return [...staticRoutes, ...blogRoutes].map((path) => ({
