@@ -50,6 +50,9 @@ export default function Footer() {
             <li>
               <Link href="#angebote" className="hover:text-white transition-colors duration-300">Formate</Link>
             </li>
+            <li>
+              <Link href="/selbstcheck" className="hover:text-white transition-colors duration-300">Selbstcheck</Link>
+            </li>
           </ul>
         </div>
         
