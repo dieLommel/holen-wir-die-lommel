@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next";
 import { Header } from "@/components/ui/header-1";
 import Footer from "@/components/sections/Footer";
@@ -61,6 +62,20 @@ export default async function BlogIndex() {
             <>
               {/* Featured: erster Post als großes Hero-Item */}
               {featured && <BlogCardFeatured post={featured} />}
+
+              {/* Hinweis auf den kostenlosen Selbstcheck */}
+              <Link
+                href="/selbstcheck"
+                className="group mb-16 lg:mb-20 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8 bg-slate text-canvas rounded-sm px-8 py-7 lg:px-12"
+              >
+                <span className="font-serif italic text-[#C27347] text-lg shrink-0">Kostenloser Selbstcheck</span>
+                <span className="font-sans text-base text-canvas/80 leading-relaxed flex-1">
+                  Sieben leise Zeichen, dass dein Familienunternehmen kippt. Fünf Seiten als PDF, ohne Anmeldung.
+                </span>
+                <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.2em] text-canvas group-hover:text-[#C27347] transition-colors shrink-0">
+                  Zum Download →
+                </span>
+              </Link>
 
               {/* Editorial-Trenner */}
               {rest.length > 0 && (
