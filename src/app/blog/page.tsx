@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: "Aus meinem Schreibtisch | Stefanie Lommel",
   description:
     "Beiträge zu Übergabe, Krisenprävention und Entscheidungsebene — geschrieben am Starnberger See von Stefanie Lommel, Wandelbegleiterin für Familienunternehmen.",
+  alternates: { canonical: "/blog" },
   openGraph: {
     title: "Aus meinem Schreibtisch | Stefanie Lommel",
     description:

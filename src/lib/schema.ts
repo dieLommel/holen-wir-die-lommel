@@ -149,9 +149,11 @@ export function buildArticleSchema(post: BlogPost) {
       post.frontmatter.primaryKeyword,
       ...(post.frontmatter.secondaryKeywords || []),
     ].join(", "),
-    image: post.frontmatter.ogImage
-      ? `${SITE_URL}${post.frontmatter.ogImage}`
-      : `${SITE_URL}/images/blog/blog-hero.jpg`,
+    image: `${SITE_URL}${
+      post.frontmatter.coverImage ||
+      post.frontmatter.ogImage ||
+      "/images/blog/blog-hero.jpg"
+    }`,
     url,
     mainEntityOfPage: {
       "@type": "WebPage",

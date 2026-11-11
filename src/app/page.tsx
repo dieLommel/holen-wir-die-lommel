@@ -16,6 +16,7 @@ export const metadata = {
   title: "Stefanie Lommel | Holen wir die Lommel",
   description:
     "Wandelbegleitung für Familien- und Traditionsunternehmen: externe Begleitung auf Entscheidungsebene bei Nachfolge und Umbruch – bevor es kippt.",
+  alternates: { canonical: "/" },
 };
 
 export default function Home() {

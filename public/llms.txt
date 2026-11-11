@@ -24,7 +24,7 @@ Stefanie Lommel begleitet Inhaber:innen, Gesellschafter:innen und Geschäftsfüh
 
 ## Blog — Wandelbegleitung kompakt
 
-*(Die folgenden Blog-Artikel sind ab Juni 2026 unter dielommel.de/blog/ verfügbar.)*
+Alle Artikel: https://dielommel.de/blog
 
 - [Sieben Frühwarnzeichen, dass dein Familienunternehmen kippt](https://dielommel.de/blog/fruehwarnzeichen-familienunternehmen): Die nicht-bilanziellen Signale vor der Strategie-Krise. Sieben leise Mechanismen, die jeder Inhaber kennt — und niemand vor dem Beirat ausspricht.
 - [Generationswechsel ohne Vertrauensverlust](https://dielommel.de/blog/generationswechsel-ohne-vertrauensverlust): Reihenfolge schlägt Inhalt. Wie Mitarbeitende, Familie, Kunden und Banken einen Generationswechsel mittragen, ohne dass jemand das Gefühl hat, ihm wurde etwas zugemutet.
@@ -32,6 +32,10 @@ Stefanie Lommel begleitet Inhaber:innen, Gesellschafter:innen und Geschäftsfüh
 - [Loslassen, ohne dich zu verlieren](https://dielommel.de/blog/loslassen-ohne-dich-zu-verlieren): Was in den letzten 12-18 Monaten vor einer Unternehmensübergabe parallel zu Verträgen und Steuern passieren muss — sonst stehst du danach in einem Leben, das du nicht vorbereitet hast.
 - [Wenn dein Kind das Unternehmen nicht übernehmen will](https://dielommel.de/blog/kind-uebernimmt-familienunternehmen-nicht): Vier echte Optionen, wenn die familiäre Nachfolge wegfällt — und welche Fehler du in den ersten Wochen unbedingt vermeiden solltest.
 - [Geschwister-Streit im Familienunternehmen](https://dielommel.de/blog/geschwister-streit-familienunternehmen-vermeiden): Sieben Warnsignale und drei Kipppunkte. Wann die Familie das Problem nicht mehr selbst lösen kann — und externe Vermittlung den Unterschied zwischen 6 Monaten und 20 Jahren Schweigen macht.
+- [Trauer im Unternehmen](https://dielommel.de/blog/trauer-im-unternehmen-fuehrungskraefte): Warum die meisten kleinen und mittleren Unternehmen keinen Plan haben, wenn ein Mitarbeiter einen geliebten Menschen verliert, und was Geschäftsführer:innen konkret tun können, bevor der Ernstfall eintritt.
+- [Mediation statt Gericht im Familienunternehmen](https://dielommel.de/blog/mediation-statt-gericht-familienunternehmen): Warum Unternehmer den Rechtsweg der Mediation vorziehen und was Mediation stattdessen leistet. Mit dem Fall, der Stefanie Lommel zur Mediatorin machte.
+- [Wenn dein Kerngeschäft wegbricht, hast du versagt?](https://dielommel.de/blog/kerngeschaeft-bricht-weg): Warum Marktveränderung kein Versagen ist, sich aber so anfühlt, und wie Unternehmer neue Ansätze finden, ohne sich selbst zu verlieren.
+- [Die Resilienzfalle im Mittelstand](https://dielommel.de/blog/resilienzfalle-mittelstand): Warum ausgerechnet dann die Kraft für Wandel fehlt, wenn sie am dringendsten gebraucht wird, und drei Wege, trotzdem handlungsfähig zu bleiben.
 
 ## Häufige Fragen
 
@@ -49,4 +53,4 @@ Stefanie Lommel begleitet Inhaber:innen, Gesellschafter:innen und Geschäftsfüh
 
 ---
 
-*Diese Datei ist die kuratierte Übersicht für AI-Crawler und Large-Language-Models nach dem Vorschlag von Jeremy Howard (Answer.AI). Sie spiegelt den Stand vom Juni 2026.*
+*Diese Datei ist die kuratierte Übersicht für AI-Crawler und Large-Language-Models nach dem Vorschlag von Jeremy Howard (Answer.AI). Sie spiegelt den Stand vom November 2026.*
