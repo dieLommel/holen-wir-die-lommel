@@ -22,7 +22,7 @@ coverImage: "/images/blog/articles/<slug>.jpg"
 coverImageAlt: string
 ```
 
-## Vorhandene Artikel (10, Stand 2026-09-29)
+## Vorhandene Artikel (11, Stand 2026-11-11)
 
 **`publishedAt` steuert seit dem 29.09.2026 wirklich die Sichtbarkeit** (`src/lib/blog.ts`, `isPublished()`). Ein Artikel mit Datum in der Zukunft ist zwar schon als Datei in `content/blog/` und gepusht, aber weder gelistet noch über die URL erreichbar (404), bis sein Datum erreicht ist. Er erscheint dann von selbst, ohne dass noch mal etwas verschoben oder gepusht werden muss. Damit das klappt, rechnen Übersicht (`blog/page.tsx`), Artikelseite (`blog/[slug]/page.tsx`) und Sitemap (`sitemap.ts`) per `export const revalidate = 600` alle 10 Minuten neu. Ohne das wären die Seiten beim letzten Deploy eingefroren: Artikel 09 war am 01.10. per Direktlink erreichbar, stand aber bis zum 04.10. nicht in Übersicht und Sitemap (Fehler vom 29.09., am 04.10. behoben). Die Sperre allein reicht also nicht, die Neuberechnung gehört zwingend dazu. Vorher (bis inkl. Artikel 09) hatte `publishedAt` keine Wirkung auf die Sichtbarkeit, nur auf Sortierung und Anzeige.
 
@@ -40,8 +40,11 @@ Trotzdem gilt weiter: Stefanie postet lieber nacheinander als mehrere auf einmal
 | 08 | mediation-statt-gericht-familienunternehmen | Consideration | 2026-08-01 | Warum Unternehmer den Rechtsweg der Mediation vorziehen; was Mediation stattdessen leistet (mit Mediations-Beispiel) |
 | 09 | kerngeschaeft-bricht-weg | Awareness | 2026-10-01 | Ist ein wegbrechendes Kerngeschäft Versagen? Mit S&P-500/Innosight-Zahlen zum Tempo der Marktveränderung; verlinkt auf Artikel 01 |
 | 10 | resilienzfalle-mittelstand | Decision | 2026-10-18 | Warum die Kraft für Wandel fehlt, wenn sie am dringendsten gebraucht wird; 3-Wege-Vergleich (Risiko-Report 2026), verlinkt auf 03 und 09 |
+| 11 | weiblicher-fuehrungsstil | Awareness | 2026-11-15 ⏳ | Was „weiblicher Führungsstil" meint, warum er wenig mit dem Geschlecht zu tun hat und warum er in der Nachfolge zählt; Tabelle Einbinden/Entscheiden, FAQ-Abschnitt (Eagly 2003, Gallup 2015, Project Aristotle); verlinkt auf 02 |
 
-**Funnel-Verteilung:** 2× Awareness, 2× Consideration, 2× Decision, 4× Trust.
+⏳ Datum liegt (Stand heute) noch in der Zukunft. Artikel ist gepusht, aber wegen der Datums-Sperre noch nicht sichtbar. Erscheint automatisch am angegebenen Tag. Danach in `public/llms.txt` nachtragen (dort nur veröffentlichte Artikel, sonst 404 für KI-Crawler).
+
+**Funnel-Verteilung:** 3× Awareness, 2× Consideration, 2× Decision, 4× Trust.
 
 **Herkunft Artikel 07:** entstanden aus Episode BBB10 des Podcasts "Business Bling Bekenntnisse" (Stefanie + Petra Kahley) — nur die Wirtschafts-/Trauer-Substanz aus Stefanies eigenen Anekdoten übernommen, Petras persönliche Geschichte bewusst ausgeschlossen. Transkript liegt in `../podcast/Episoden/`.
 
@@ -57,6 +60,7 @@ Persönliche Anekdoten, die als roter Faden durch mehrere Artikel laufen — nü
 - **A6-Allein-im-Teammeeting** — Mitarbeiterin verliert ihren Sohn, steht ohne Rückendeckung allein im Teammeeting da (→ 07)
 - **A7-Kuendigung-Mediation** — echter Fall: Unternehmer kündigt Bereichsleiter ohne vorheriges Gespräch → Kündigungsschutzklage, Gericht, gespaltene Belegschaft; „Besser, das Gericht entscheidet, dann habe ich recht." War Stefanies persönlicher Anlass für die Mediationsausbildung (→ 08)
 - **A8-Kerngeschaeft-Bricht-Weg** — Eröffnungs-Anekdote ist ein bewusst komponiertes Platzhalter-Szenario (Inhaber 3. Generation), keine reale Anekdote. Zusätzlich ein eigener, echter (aber bewusst allgemein gehaltener) Abschnitt: Stefanie hat selbst nach Jahren der Selbstständigkeit im Beraterumfeld einen Schnitt gemacht und neu angefangen, weil sich die Marktbedingungen verändert hatten — bewusst in abgeschlossener Vergangenheitsform erzählt, nicht als laufende Situation (siehe [[feedback_personal_vulnerability_framing]]) (→ 09, kurz erneut referenziert mit Link in → 10)
+- **A10-Nachfolgerin-Kaffeekueche** — Platzhalter-Komposit, keine reale Anekdote (von Stefanie freigegeben): Nachfolgerin führt beteiligend, langjähriger Mitarbeiter sagt „Ihr Vater hat einfach gesagt, wo es langgeht." Kernaussage: Einbinden **und** entscheiden (→ 11)
 - **A9-Resilienzfalle-Aufschub** — Eröffnungs-Anekdote ebenfalls Platzhalter-Komposit (Unternehmerin, zweite Führungsebene seit 2 Jahren aufgeschoben), keine reale Anekdote. Reale Ergänzung: Stefanie hat nach dem eigenen Schnitt (siehe A8) erst im Nachhinein gemerkt, wie viel Kraft sie vorher schon verloren hatte — Kernbeleg für die Resilienzfalle selbst (→ 10)
 
 ## Ton & wiederkehrende Muster
