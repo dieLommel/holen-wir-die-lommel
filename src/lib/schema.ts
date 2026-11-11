@@ -26,6 +26,7 @@ export function buildPersonSchema() {
       "Begleitet Inhaber:innen und Geschäftsführer:innen von Familien- und Traditionsunternehmen durch komplexe Wandelprozesse — bevor Wandel zur Krise wird.",
     url: SITE_URL,
     image: `${SITE_URL}/images/stefanie-portrait.jpg`,
+    sameAs: ["https://www.linkedin.com/in/stefanie-lommel"],
     worksFor: { "@id": ORG_ID },
     homeLocation: {
       "@type": "Place",
